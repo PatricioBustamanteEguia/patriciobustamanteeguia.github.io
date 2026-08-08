@@ -1349,17 +1349,20 @@ section {
 }
 
 .credly-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.25rem;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
-.credly-card {
+.credly-badge {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.25rem;
+    text-align: center;
+    width: 140px;
+    padding: 1.5rem 1rem;
     border: 1px solid var(--border-thin);
     border-radius: var(--radius-sm);
     text-decoration: none;
@@ -1369,58 +1372,57 @@ section {
     overflow: hidden;
 }
 
-.credly-card:hover {
+.credly-badge:hover {
     border-color: var(--text-heading);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
 }
 
-.credly-card__img {
-    width: 52px;
-    height: 52px;
+.credly-badge__arrow {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: all var(--transition-base);
+}
+
+.credly-badge:hover .credly-badge__arrow {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.credly-badge__img {
+    width: 64px;
+    height: 64px;
     object-fit: contain;
-    flex-shrink: 0;
-    filter: grayscale(20%);
-    transition: filter var(--transition-base);
+    margin-bottom: 1rem;
+    filter: grayscale(15%);
+    transition: filter var(--transition-base), transform var(--transition-base);
 }
 
-.credly-card:hover .credly-card__img {
+.credly-badge:hover .credly-badge__img {
     filter: grayscale(0%);
+    transform: scale(1.05);
 }
 
-.credly-card__info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    flex: 1;
-    min-width: 0;
-}
-
-.credly-card__name {
-    font-size: 0.82rem;
+.credly-badge__name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--text-heading);
     line-height: 1.3;
+    margin-bottom: 0.35rem;
 }
 
-.credly-card__issuer {
-    font-size: 0.72rem;
+.credly-badge__issuer {
+    font-size: 0.65rem;
     color: var(--text-secondary);
-}
-
-.credly-card__verify {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    opacity: 0;
-    transition: opacity var(--transition-base);
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.credly-card:hover .credly-card__verify {
-    opacity: 1;
-    color: var(--text-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .credly-section__link {
