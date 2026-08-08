@@ -1,0 +1,16 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*?*
+
+# Bloquear Wayback Machine y otros archivadores
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: archive.org_bot
+Disallow: /
+
+User-agent: ccbot
+Disallow: /
+
+Sitemap: https://patriciobustamante.site/sitemap.xml

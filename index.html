@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Diseñador UX/UI con +12 años de experiencia en Usabilidad, Arquitectura de Información y Accesibilidad Web. Especialista en transformar conceptos complejos en interfaces intuitivas.">
+    <meta name="keywords"
+        content="UX Designer Chile, Diseño UI, Usabilidad, Accesibilidad Web, Design Thinking, Arquitectura de Información, Diseño Web Profesional, Universidad de las Américas Chile, Universidad Europea de Madrid Psicología">
+    <meta name="robots" content="noarchive, nosnippet">
+    <meta name="googlebot" content="noarchive">
+
+    <!-- Open Graph (Social) -->
+    <meta property="og:title" content="Patricio Bustamante | Estratega UX/UI & Diseño Web Senior">
+    <meta property="og:description"
+        content="Diseñador UX/UI con +12 años de experiencia en Usabilidad, Arquitectura de Información y Accesibilidad Web. Especialista en transformar conceptos complejos en interfaces intuitivas.">
+    <meta property="og:image" content="assets/patricio-bustamante.jpg">
+    <meta property="og:type" content="profile">
+
+    <title>Patricio Bustamante | Estratega UX/UI & Diseño Web Senior</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@300;600;900&display=swap"
+        rel="stylesheet">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Person", "ProfessionalService"],
+      "name": "Patricio Bustamante",
+      "jobTitle": "Senior UX/UI Designer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santiago",
+        "addressCountry": "Chile"
+      },
+      "knowsAbout": [
+        "User Experience Design",
+        "User Interface Design",
+        "Web Accessibility",
+        "Information Architecture"
+      ],
+      "image": "assets/patricio-bustamante.jpg",
+      "url": "https://patriciobustamante.site" 
+    }
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+    <noscript>
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 999999; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Inter', sans-serif; padding: 20px;">
+            <div>
+                <h1 style="color: #000; font-family: 'Outfit', sans-serif;">Acceso Restringido</h1>
+                <p style="color: #4B5563; max-width: 500px; margin: 1rem auto;">Por razones de seguridad y para garantizar la mejor experiencia de usuario, este sitio requiere JavaScript activado. Por favor, actívalo en la configuración de tu navegador.</p>
+            </div>
+        </div>
+        <style>body { visibility: hidden !important; }</style>
+    </noscript>
+
+    <!-- ====== NAVEGACIÓN ====== -->
+    <nav class="header-nav" id="header-nav">
+        <div class="header-nav__logo">PBE</div>
+        <ul class="header-nav__list" id="navList">
+            <li class="header-nav__item"><a href="#inicio" class="header-nav__link">Inicio</a></li>
+            <li class="header-nav__item"><a href="#sobre-mi" class="header-nav__link">Sobre Mí</a></li>
+            <li class="header-nav__item"><a href="#habilidades" class="header-nav__link">Habilidades</a></li>
+            <li class="header-nav__item"><a href="#proyectos" class="header-nav__link">Proyectos</a></li>
+            <li class="header-nav__item"><a href="#certificaciones" class="header-nav__link">Certificaciones</a></li>
+            <li class="header-nav__item"><a href="#contacto" class="header-nav__link">Contacto</a></li>
+        </ul>
+        <button class="header-nav__hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+            <span class="header-nav__hamburger-bar"></span>
+            <span class="header-nav__hamburger-bar"></span>
+            <span class="header-nav__hamburger-bar"></span>
+        </button>
+    </nav>
+
+    <!-- ====== HERO ====== -->
+    <header class="hero" id="inicio">
+        <div class="hero__content">
+            <p class="hero__eyebrow">Hola, soy</p>
+            <h1 class="hero__title">Patricio Bustamante Eguía</h1>
+            <p class="hero__subtitle">UX/UI Specialist | Psicología aplicada al Diseño | AI Prototyper | Design Systems</p>
+            <div class="hero__cta-container">
+                <a href="documentos/cv-patricio-bustamante.pdf" target="_blank"
+                    class="hero__btn hero__btn--outline">Ver CV</a>
+            </div>
+            <div class="hero__social">
+                <a href="https://www.linkedin.com/in/patriciobustamanteeguia/" target="_blank" class="hero__social-link"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20"
+                        height="20">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="https://www.behance.net/patricibustama10" target="_blank" class="hero__social-link"
+                    aria-label="Behance">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20"
+                        height="20">
+                        <path
+                            d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <!-- ====== SOBRE MÍ ====== -->
+        <section class="about-me flat-section reveal" id="sobre-mi">
+            <div class="about-me__body">
+                <div class="about-me__text">
+                    <h2 class="about-me__title">Sobre Mí</h2>
+                    Diseñador especializado en la intersección entre la mente y la tecnología. Mi enfoque se sustenta en una sólida base de estudios en <strong>Psicología Cognitiva</strong> realizados en la <strong>Universidad de las Américas (Chile)</strong> y la <strong>Universidad Europea de Madrid (España)</strong>. Esta formación me permite optimizar la carga cognitiva y diseñar arquitecturas de información basadas en modelos mentales reales. Con trayectoria desde 2011, hoy fusiono el rigor de los Design Systems con el prototipado avanzado mediante IA Generativa.
+                </div>
+                <div class="about-me__photo-wrapper">
+                    <img src="assets/patricio-bustamante.jpg" alt="Patricio Bustamante - UX/UI Specialist &amp; Psicólogo Cognitivo"
+                        class="about-me__photo" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== EXPERIENCIA ====== -->
+        <section class="experience reveal" id="experiencia">
+            <h2 class="about-me__title">Experiencia Destacada</h2>
+            <div class="experience__grid">
+                <div class="flat-section">
+                    <h3 class="skill-card__title" style="margin-bottom: 0.5rem;">UX Designer | Bitzcode</h3>
+                    <p class="hero__subtitle" style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--accent-primary);">2021 — Presente</p>
+                    <p class="about-me__description">Liderazgo en el diseño de interfaces centradas en el usuario, creación de Design Systems escalables y prototipado de alta fidelidad para soluciones tecnológicas complejas.</p>
+                </div>
+                <div class="flat-section">
+                    <h3 class="skill-card__title" style="margin-bottom: 0.5rem;">Trayectoria Técnica</h3>
+                    <p class="hero__subtitle" style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--accent-primary);">2011 — 2021</p>
+                    <p class="about-me__description">Evolución desde el Diseño Multimedia y Programación Web hacia la especialización en UX/UI, consolidando una base técnica sólida en desarrollo frontend y diseño visual.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== HABILIDADES ====== -->
+        <section class="skills reveal" id="habilidades">
+            <h2 class="skills__title">Habilidades Técnicas</h2>
+            <div class="skills__grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="skill-card reveal">
+                    <h3 class="skill-card__title">Design & Architecture</h3>
+                    <ul class="skill-card__list">
+                        <li>Figma (Expert Grids/Auto Layout)</li>
+                        <li>Design Systems</li>
+                        <li>Arquitectura de Información</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <h3 class="skill-card__title">Accessibility & Standards</h3>
+                    <ul class="skill-card__list">
+                        <li>WCAG 2.1 (Accesibilidad)</li>
+                        <li>Diseño Inclusivo</li>
+                        <li>Documentación Técnica</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <h3 class="skill-card__title">AI & Future-Proofing</h3>
+                    <ul class="skill-card__list">
+                        <li>AI Prompting</li>
+                        <li>Prototipado con GenAI</li>
+                        <li>Automatización de Workflow</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== PROYECTOS ====== -->
+        <section class="projects reveal" id="proyectos">
+            <h2 class="projects__title">Proyectos</h2>
+            <div class="projects__grid">
+                <!-- DressUp -->
+                <div class="project-card reveal">
+                    <div class="project-card__image-container"
+                        onclick="openModal('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80', 'DressUp')"
+                        aria-label="Ver imagen de DressUp en grande">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"
+                            alt="DressUp — E-commerce de moda sostenible" class="project-card__image" loading="lazy">
+                        <div class="project-card__overlay" aria-hidden="true">
+                            <span class="project-card__zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__bootcamp">U. del Desarrollo</span>
+                        <h3 class="project-card__title">DressUp</h3>
+                        <p class="project-card__description">E-commerce de moda sostenible enfocado en la experiencia de
+                            usuario.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">UX Research</span>
+                            <span class="project-card__tag">Figma</span>
+                            <span class="project-card__tag">E-commerce</span>
+                        </div>
+                        <a href="documentos/caso-dressup.pdf" target="_blank"
+                            class="project-card__btn project-card__btn--primary">Ver PDF ↗</a>
+                    </div>
+                </div>
+
+                <!-- Coyote Bags -->
+                <div class="project-card reveal">
+                    <div class="project-card__image-container"
+                        onclick="openModal('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80', 'Coyote Bags')"
+                        aria-label="Ver imagen de Coyote Bags en grande">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80"
+                            alt="Coyote Bags — Rediseño de checkout" class="project-card__image" loading="lazy">
+                        <div class="project-card__overlay" aria-hidden="true">
+                            <span class="project-card__zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__bootcamp">Talento Digital</span>
+                        <h3 class="project-card__title">Coyote Bags</h3>
+                        <p class="project-card__description">Optimización del checkout y rediseño visual para marca
+                            urbana.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">UI Design</span>
+                            <span class="project-card__tag">Checkout</span>
+                            <span class="project-card__tag">Branding</span>
+                        </div>
+                        <a href="documentos/CoyoteBags.pdf" target="_blank"
+                            class="project-card__btn project-card__btn--primary">Ver PDF ↗</a>
+                    </div>
+                </div>
+
+                <!-- Sr. Compost -->
+                <div class="project-card reveal">
+                    <div class="project-card__image-container"
+                        onclick="openModal('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80', 'Sr. Compost')"
+                        aria-label="Ver imagen de Sr. Compost en grande">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
+                            alt="Sr. Compost — Plataforma de gestión de residuos" class="project-card__image"
+                            loading="lazy">
+                        <div class="project-card__overlay" aria-hidden="true">
+                            <span class="project-card__zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__bootcamp">Talento Digital</span>
+                        <h3 class="project-card__title">Sr. Compost</h3>
+                        <p class="project-card__description">Plataforma interactiva para la gestión de residuos
+                            orgánicos.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">App Design</span>
+                            <span class="project-card__tag">Sostenibilidad</span>
+                            <span class="project-card__tag">UX</span>
+                        </div>
+                        <a href="documentos/Sr_Compost.pdf" target="_blank"
+                            class="project-card__btn project-card__btn--primary">Ver PDF ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CERTIFICACIONES ====== -->
+        <section class="certifications reveal" id="certificaciones">
+            <h2 class="certifications__title">Certificaciones y Diplomas</h2>
+            <div class="certifications__grid">
+
+                <!-- Diploma UDD -->
+                <div class="cert-card reveal">
+                    <div class="cert-card__content">
+                        <span class="cert-card__category">Bootcamp UX/UI</span>
+                        <h3 class="cert-card__title">UDD</h3>
+                        <a href="assets/certificaciones/diploma-udd.pdf" target="_blank"
+                            class="cert-card__btn">Ver Diploma ↗</a>
+                    </div>
+                </div>
+
+                <!-- Acreditta Talento Digital -->
+                <div class="cert-card reveal">
+                    <div class="cert-card__content">
+                        <span class="cert-card__category">Bootcamp UX/UI</span>
+                        <h3 class="cert-card__title">Talento Digital</h3>
+                        <a href="https://acreditta.com/credential/122a05d9-c122-4c4f-af32-93916e08aa44" target="_blank"
+                            class="cert-card__btn">Ver Credencial ↗</a>
+                    </div>
+                </div>
+
+                <!-- Diploma Diseño y Gestión Ágil -->
+                <div class="cert-card reveal">
+                    <div class="cert-card__content">
+                        <span class="cert-card__category">Gestión de Proyectos</span>
+                        <h3 class="cert-card__title">Diplomado Diseño y Gestión Ágil</h3>
+                        <a href="assets/certificaciones/diplomado-gestion-agil.pdf" target="_blank" class="cert-card__btn">Ver
+                            Certificado ↗</a>
+                    </div>
+                </div>
+
+                <!-- Especialización Design Thinking (Agrupada) -->
+                <div class="cert-card reveal">
+                    <div class="cert-card__content">
+                        <span class="cert-card__category">Innovación & UX</span>
+                        <h3 class="cert-card__title">Especialización en Design Thinking</h3>
+                        <a href="assets/certificaciones/design-thinking-upla.pdf" target="_blank"
+                            class="cert-card__btn">Ver Certificado Principal ↗</a>
+                    </div>
+                </div>
+
+                <!-- Certificado Diseño Web -->
+                <div class="cert-card reveal">
+                    <div class="cert-card__content">
+                        <span class="cert-card__category">Desarrollo Frontend</span>
+                        <h3 class="cert-card__title">Diseño web HTML5+CSS</h3>
+                        <a href="assets/certificaciones/diseno-web-html5css.png" target="_blank"
+                            class="cert-card__btn">Ver Certificado ↗</a>
+                    </div>
+                </div>
+
+                <!-- Certificado IA Generativa -->
+                <div class="cert-card reveal">
+                    <div class="cert-card__content">
+                        <span class="cert-card__category">Inteligencia Artificial</span>
+                        <h3 class="cert-card__title">¿Qué es la IA generativa?</h3>
+                        <a href="assets/certificaciones/ia-generativa.pdf"
+                            target="_blank" class="cert-card__btn">Ver Certificado ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor Final de Insignias Bootcamps -->
+            <div class="cert-badges-container">
+                <img src="assets/certificaciones/insignia-talento-digital.png"
+                    alt="Insignia Certificación UX Talento Digital" class="cert-badge reveal" loading="lazy"
+                    onclick="openModal(this.src, this.alt)">
+                <img src="assets/certificaciones/insignia-udd.png"
+                    alt="Insignia Certificación UX/UI Designer de UDD" class="cert-badge reveal" loading="lazy"
+                    onclick="openModal(this.src, this.alt)">
+            </div>
+        </section>
+
+        <!-- ====== TREND HUNTER (Weekly Pulse) ====== -->
+        <section class="weekly-pulse reveal" id="trend-hunter">
+            <h2 class="projects__title">Weekly Pulse</h2>
+            <div class="projects__grid" id="newsGrid">
+                <!-- Tarjetas inyectadas por JS -->
+            </div>
+        </section>
+
+        <!-- ====== CONTACTO ====== -->
+        <section class="contact-section flat-section reveal" id="contacto">
+            <div class="contact-form">
+                <h2 class="contact-form__title">Hablemos</h2>
+                <p class="contact-form__description">¿Tienes un proyecto en mente? Cuéntame sobre él.</p>
+                <form class="contact-form__form" id="contactForm" novalidate>
+                    <div class="contact-form__group">
+                        <label for="name" class="contact-form__label">Nombre</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required
+                            class="contact-form__input" autocomplete="name">
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="email" class="contact-form__label">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required
+                            class="contact-form__input" autocomplete="email">
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="message" class="contact-form__label">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" placeholder="¿En qué puedo ayudarte?" required
+                            class="contact-form__textarea"></textarea>
+                    </div>
+                    <button type="submit" class="contact-form__btn" id="submitBtn">Enviar Propuesta</button>
+                    <div class="contact-form__feedback" id="formFeedback" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ====== MODAL DE IMAGEN ====== -->
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Imagen del proyecto">
+        <button class="modal__close" id="modalClose" aria-label="Cerrar modal">&times;</button>
+        <img class="modal-content" id="modalImg" alt="">
+        <p class="modal__caption" id="modalCaption"></p>
+    </div>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <p class="footer__text">&copy; 2026 Patricio Bustamante Eguía. Diseñado con visión estratégica.</p>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
