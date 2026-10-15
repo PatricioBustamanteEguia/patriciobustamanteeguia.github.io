@@ -1,1 +1,657 @@
-PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVzIj4KCjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgogICAgPG1ldGEgbmFtZT0iY29sb3Itc2NoZW1lIiBjb250ZW50PSJsaWdodCI+CiAgICA8dGl0bGU+UGF0cmljaW8gQnVzdGFtYW50ZSB8IEFJIFB0b2R1Y3QgRGVzaWduZXIgJmFtcDsgVVgvVUkgU3BlY2lhbGlzdDwvdGl0bGU+CiAgICA8bWV0YSBuYW1lPSJkZXNjcmlwdGlvbiIKICAgICAgICBjb250ZW50PSJBSSBQcm9kdWN0IERlc2lnbmVyIHkgVVgvVUkgU3BlY2lhbGlzdCBlbmZvY2FkbyBlbiBjb25jZXB0dWFsaXphciB5IGNvbnN0cnVpciBwcm9kdWN0b3MgZGlnaXRhbGVzIGludGVyYWN0aXZvcyBlIGludGVyZmFjZXMgaW50ZWxpZ2VudGVzLiBDb24gYmFzZSBlbiBwc2ljb2xvZ8OtYSB5IGRpc2XDsW8gbXVsdGltZWRpYSwgaW50ZWdyYSBpbnZlc3RpZ2FjacOzbiBkZSB1c3VhcmlvcywgYXJxdWl0ZWN0dXJhIGRlIGluZm9ybWFjacOzbiB5IGhlcnJhbWllbnRhcyBkZSBJQSBnZW5lcmF0aXZhLiI+CiAgICA8bWV0YSBuYW1lPSJrZXl3b3JkcyIKICAgICAgICBjb250ZW50PSJBSSBQT2R1Y3QgRGVzaWduZXIsIFVYL1VJIFNwZWNpYWxpc3QsIFByb3RvdGlwYWRvIEludGVyYWN0aXZvLCBHb29nbGUgQUkgU3R1ZGlvLCBEZXNpZ24gU3lzdGVtcywgRmlnbWEsIFdDQUcsIFBhdHJpY2lvIEJ1c3RhbWFudGUsIFNhbnRpYWdvIENoaWxlIj4KICAgIDxtZXRhIG5hbWU9ImF1dGhvciIgY29udGVudD0iUGF0cmljbyBCdXN0YW1hbnRlIEVndcOtYSI+CiAgICA8bWV0YSBuYW1lPSJyb2JvdHMiIGNvbnRlbnQ9ImluZGV4LCBmb2xsb3ciPgogICAgPG1ldGEgbmFtZT0iZ29vZ2xlLXNpdGUtdmVyaWZpY2F0aW9uIiBjb250ZW50PSJab2FxYVRGZG02U1Bva09OWF9KbkpURzJVQ1hRekEyUENoQXhaR0JqbGk4IiAvPgoKICAgIDwhLS0gT3BlbiBHcmFwaCAvIEZhY2Vib29rIC8gTGlua2VkSW4gLS0+CiAgICA8bWV0YSBwcm9wZXJ0eT0ib2c6dGl0bGUiIGNvbnRlbnQ9IlBhdHJpY2lvIEJ1c3RhbWFudGUgfCBBSSBQcm9kdWN0IERlc2lnbmVyICZhbXA7IFVYL1VJIFNwZWNpYWxpc3QiPgogICAgPG1ldGEgcHJvcGVydHk9Im9nOmRlc2NyaXB0aW9uIgogICAgICAgIGNvbnRlbnQ9IkRpc2XDsW8gcHJvZHVjdG9zIGRpZ2l0YWxlcyBpbnRlcmFjdGl2b3MgZSBpbnRlcmZhY2VzIGludGVsaWdlbnRlcywgY29uZWN0YW5kbyBtZXRvZG9sb2fDrWFzIGNlbnRyYWRhcyBlbiBsYXMgcGVyc29uYXMgY29uIGNhcGFjaWRhZGVzIGRlIElBIGdlbmVyYXRpdmEuIj4KICAgIDxtZXRhIHByb3BlcnR5PSJvZzppbWFnZSIgY29udGVudD0iYXNzZXRzL3BhdHJpY2lvLWJ1c3RhbWFudGUuanBnIj4KICAgIDxtZXRhIHByb3BlcnR5PSJvZzp0eXBlIiBjb250ZW50PSJwcm9maWxlIj4KCiAgICA8IS0tIFR3aXR0ZXIgQ2FyZCAtLT4KICAgIDxtZXRhIG5hbWU9InR3aXR0ZXI6Y2FyZCIgY29udGVudD0ic3VtbWFyeV9sYXJnZV9pbWFnZSI+CiAgICA8bWV0YSBuYW1lPSJ0d2l0dGVyOnRpdGxlIiBjb250ZW50PSJQYXRyaWNpbyBCdXN0YW1hbnRlIHwgQUkgUHJvZHVjdCBEZXNpZ25lciAmYW1wOyBVWC9VSSBTcGVjaWFsaXN0Ij4KICAgIDxtZXRhIG5hbWU9InR3aXR0ZXI6ZGVzY3JpcHRpb24iCiAgICAgICAgY29udGVudD0iRGlzZcOxbyBwcm9kdWN0b3MgZGlnaXRhbGVzIGludGVyYWN0aXZvcyBlIGludGVyZmFjZXMgaW50ZWxpZ2VudGVzLCBjb25lY3RhbmRvIG1ldG9kb2xvZ8OtYXMgY2VudHJhZGFzIGVuIGxhcyBwZXJzb25hcyBjb24gY2FwYWNpZGFkZXMgZGUgSUEgZ2VuZXJhdGl2YS4iPgogICAgPG1ldGEgbmFtZT0idHdpdHRlcjppbWFnZSIgY29udGVudD0iYXNzZXRzL3BhdHJpY2lvLWJ1c3RhbWFudGUuanBnIj4KCiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9InN0eWxlLmNzcyI+CiAgICA8bGluayByZWw9InByZWNvbm5lY3QiIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20iPgogICAgPGxpbmsgcmVsPSJwcmVjb25uZWN0IiBocmVmPSJodHRwczovL2ZvbnRzLmdzdGF0aWMuY29tIiBjcm9zc29yaWdpbj4KICAgIDxsaW5rCiAgICAgICAgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1JbnRlcjp3Z2h0QDQwMDs1MDA7NjAwOzcwMCZmYW1pbHk9UGx1cytKYWthcnRhK1NhbnM6d2dodEA1MDA7NjAwOzcwMCZkaXNwbGF5PXN3YXAiCiAgICAgICAgcmVsPSJzdHlsZXNoZWV0Ij4KCiAgICA8IS0tIEpTT04tTEQgLS0+CiAgICA8c2NyaXB0IHR5cGU9ImFwcGxpY2F0aW9uL2xkK2pzb24iPgogICAgewogICAgICAiQGNvbnRleHQiOiAiaHR0cHM6Ly9zY2hlbWEub3JnIiwKICAgICAgIkB0eXBlIjogWyJQZXJzb24iLCAiUHJvZmVzc2lvbmFsU2VydmljZSJdLAogICAgICAibmFtZSI6ICJQYXRyaWNpbyBCdXN0YW1hbnRlIiwKICAgICAgImpvYlRpdGxlIjogIkFJIFByb2R1Y3QgRGVzaWduZXIgJiBVWC9VSSBTcGVjaWFsaXN0IiwKICAgICAgImFkZHJlc3MiOiB7CiAgICAgICAgIkB0eXBlIjogIlBvc3RhbEFkZHJlc3MiLAogICAgICAgICJhZGRyZXNzTG9jYWxpdHkiOiAiU2FudGlhZ28iLAogICAgICAgICJhZGRyZXNzQ291bnRyeSI6ICJDaGlsZSIKICAgICAgfSwKICAgICAgImtub3dzQWJvdXQiOiBbCiAgICAgICAgIlVYL1VJIERlc2lnbiIsCiAgICAgICAgIlByb2R1Y3QgRGVzaWduIiwKICAgICAgICAiSW5mb3JtYXRpb24gQXJjaGl0ZWN0dXJlIiwKICAgICAgICAiU2NhbGFibGUgRGVzaWduIFN5c3RlbXMiLAogICAgICAgICJBY2Nlc3NpYmlsaXR5IFdDQUcgMi4xIiwKICAgICAgICAiRGF0YS1Ecml2ZW4gVVgiLAogICAgICAgICJIdW1hbi1pbi10aGUtTG9vcCBBSSIKICAgICAgXSwKICAgICAgImltYWdlIjogImFzc2V0cy9wYXRyaWNpby1idXN0YW1hbnRlLmpwZyIsCiAgICAgICJ1cmwiOiAiaHR0cHM6Ly9wYXRyaWNpb2J1c3RhbWFudGVlZ3VpYS5naXRodWIuaW8iIAogICAgfQogICAgPC9zY3JpcHQ+CjwvaGVhZD4KCjxib2R5PgogICAgPG5vc2NyaXB0PgogICAgICAgIDxkaXYgc3R5bGU9InBvc2l0aW9uOiBmaXhlZDsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBiYWNrZ3JvdW5kOiAjRjhGQUZDOyB6LWluZGV4OiA5OTk5OTk7IGRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyB0ZXh0LWFsaWduOiBjZW50ZXI7IGZvbnQtZmFtaWx5OiAnSW50ZXInLCBzYW5zLXNlcmlmOyBwYWRkaW5nOiAyMHB4OyI+CiAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgICA8aDEgc3R5bGU9ImNvbG9yOiAjMEYxNzJBOyBmb250LWZhbWlseTogJ1BsdXMgSmFrYXJ0YSBTYW5zJywgJ0ludGVyJywgc2Fucy1zZXJpZjsgZm9udC13ZWlnaHQ6IDcwMDsgbGV0dGVyLXNwYWNpbmc6IC0wLjAyZW07Ij5BY2Nlc28gUmVzdHJpbmdpZG88L2gxPgogICAgICAgICAgICAgICAgPHAgc3R5bGU9ImNvbG9yOiAjMzM0MTU1OyBtYXgtd2lkdGg6IDUwMHB4OyBtYXJnaW46IDFyZW0gYXV0bzsiPlBvciByYXpvbmVzIGRlIGFjY2VzaWJpbGlkYWQgeSBleHBlcmllbmNpYSBpbnRlcmFjdGl2YSwgZXN0ZSBzaXRpbyByZXF1aWVyZSBKYXZhU2NyaXB0IGFjdGl2YWRvLiBQb3IgZmF2b3IsIGFjdMOtdmFsbyBlbiBsYSBjb25maWd1cmFjacOzbiBkZSB0dSBuYXZlZ2Fkb3IuPC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8c3R5bGU+Ym9keSB7IHZpc2liaWxpdHk6IGhpZGRlbiAhaW1wb3J0YW50OyB9PC9zdHlsZT4KICAgIDwvbm9zY3JpcHQ+CgogICAgPCEtLSA9PT09PT0gTkFWRUdBQ0nDk04gPT09PT09IC0tPgogICAgPG5hdiBjbGFzcz0iaGVhZGVyLW5hdiIgaWQ9ImhlYWRlci1uYXYiIGFyaWEtbGFiZWw9Ik5hdmVnYWNpw7NuIHByaW5jaXBhbCI+CiAgICAgICAgPGEgaHJlZj0iI2luaWNpbyIgY2xhc3M9ImhlYWRlci1uYXZfX2xvZ28iIGFyaWEtbGFiZWw9IklyIGFsIGluaWNpbyBkZSBQYXRyaWNpbyBCdXN0YW1hbnRlIj5QQkU8L2E+CiAgICAgICAgPHVsIGNsYXNzPSJoZWFkZXItbmF2X19saXN0IiBpZD0ibmF2TGlzdCI+CiAgICAgICAgICAgIDxsaSBjbGFzcz0iaGVhZGVyLW5hdl9faXRlbSI+PGEgaHJlZj0iI2luaWNpbyIgY2xhc3M9ImhlYWRlci1uYXZfX2xpbmsiPkluaWNpbzwvYT48L2xpPgogICAgICAgICAgICA8bGkgY2xhc3M9ImhlYWRlci1uYXZfX2l0ZW0iPjxhIGhyZWY9IiNzb2JyZS1taSIgY2xhc3M9ImhlYWRlci1uYXZfX2xpbmsiPlNvYnJlIE3DrTwvYT48L2xpPgogICAgICAgICAgICA8bGkgY2xhc3M9ImhlYWRlci1uYXZfX2l0ZW0iPjxhIGhyZWY9IiNleHBlcmllbmNpYSIgY2xhc3M9ImhlYWRlci1uYXZfX2xpbmsiPkV4cGVyaWVuY2lhPC9hPjwvbGk+CiAgICAgICAgICAgIDxsaSBjbGFzcz0iaGVhZGVyLW5hdl9faXRlbSI+PGEgaHJlZj0iI2hhYmlsaWRhZGVzIiBjbGFzcz0iaGVhZGVyLW5hdl9fbGluayI+SGFiaWxpZGFkZXM8L2E+PC9saT4KICAgICAgICAgICAgPGxpIGNsYXNzPSJoZWFkZXItbmF2X19pdGVtIj48YSBocmVmPSIjcHJveWVjdG9zIiBjbGFzcz0iaGVhZGVyLW5hdl9fbGluayI+Q2Fzb3MgZGUgRXN0dWRpbzwvYT48L2xpPgogICAgICAgICAgICA8bGkgY2xhc3M9ImhlYWRlci1uYXZfX2l0ZW0iPjxhIGhyZWY9IiNjZXJ0aWZpY2FjaW9uZXMiIGNsYXNzPSJoZWFkZXItbmF2X19saW5rIj5DZXJ0aWZpY2FjaW9uZXM8L2E+PC9saT4KICAgICAgICAgICAgPGxpIGNsYXNzPSJoZWFkZXItbmF2X19pdGVtIj48YSBocmVmPSIjY29udGFjdG8iIGNsYXNzPSJoZWFkZXItbmF2X19saW5rIj5Db250YWN0bzwvYT48L2xpPgogICAgICAgIDwvdWw+CiAgICAgICAgPGJ1dHRvbiBjbGFzcz0iaGVhZGVyLW5hdl9faGFtYnVyZ2VyIiBpZD0iaGFtYnVyZ2VyQnRuIiBhcmlhLWxhYmVsPSJBYnJpciBtZW7DuiIgYXJpYS1leHBhbmRlZD0iZmFsc2UiIGFyaWEtY29udHJvbHM9Im5hdkxpc3QiPgogICAgICAgICAgICA8c3BhbiBjbGFzcz0iaGVhZGVyLW5hdl9faGFtYnVyZ2VyLWJhciI+PC9zcGFuPgogICAgICAgICAgICA8c3BhbiBjbGFzcz0iaGVhZGVyLW5hdl9faGFtYnVyZ2VyLWJhciI+PC9zcGFuPgogICAgICAgICAgICA8c3BhbiBjbGFzcz0iaGVhZGVyLW5hdl9faGFtYnVyZ2VyLWJhciI+PC9zcGFuPgogICAgICAgIDwvYnV0dG9uPgogICAgPC9uYXY+CgogICAgPCEtLSA9PT09PT0gSEVSTyA9PT09PT0gLS0+CiAgICA8aGVhZGVyIGNsYXNzPSJoZXJvIiBpZD0iaW5pY2lvIj4KICAgICAgICA8ZGl2IGNsYXNzPSJoZXJvX19jb250ZW50IGhlcm9fX2NvbnRlbnQtLWFuaW1hdGVkIj4KICAgICAgICAgICAgPCEtLSBCYWRnZSBzdXBlcmlvciBkZSBkaXNwb25pYmlsaWRhZCAtLT4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iaGVyb19fYmFkZ2UgaGVyb19fYW5pbSBoZXJvX19hbmltLS0xIiByb2xlPSJzdGF0dXMiIGFyaWEtbGFiZWw9IkVzdGFkbzogRGlzcG9uaWJsZSBwYXJhIG51ZXZvcyBwcm95ZWN0b3MgbyBjb25zdWx0b3LDrWEiPgogICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9Imhlcm9fX2JhZGdlLWRvdCIgYXJpYS1oaWRkZW49InRydWUiPjwvc3Bhbj4KICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJoZXJvX19iYWRnZS10ZXh0Ij5EaXNwb25pYmxlIHBhcmEgbnVldm9zIHByb3llY3RvcyAvIENvbnN1bHRvcsOtYTwvc3Bhbj4KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8aDEgY2xhc3M9Imhlcm9fX3RpdGxlIGhlcm9fX2FuaW0gaGVyb19fYW5pbS0tMiI+UGF0cmljbyBCdXN0YW1hbnRlIEVndcOtYTwvaDE+CiAgICAgICAgICAgIDxoMiBjbGFzcz0iaGVyb19fcm9sZSBoZXJvX19hbmltIGhlcm9fX2FuaW0tLTMiPkFJIFByb2R1Y3QgRGVzaWduZXIgJmFtcDsgVVgvVUkgU3BlY2lhbGlzdDwvaDI+CiAgICAgICAgICAgIDxwIGNsYXNzPSJoZXJvX19kZXNjcmlwdGlvbiBoZXJvX19hbmltIGhlcm9fX2FuaW0tLTQiPgogICAgICAgICAgICAgICAgRGlzZcOxbyBwcm9kdWN0b3MgZGlnaXRhbGVzIGludGVyYWN0aXZvcyBlIGludGVyZmFjZXMgaW50ZWxpZ2VudGVzLCBjb25lY3RhbmRvIG1ldG9kb2xvZ8OtYXMgY2VudHJhZGFzIGVuIGxhcyBwZXJzb25hcyBjb24gY2FwYWNpZGFkZXMgZGUgSUEgZ2VuZXJhdGl2YSBwYXJhIGRhciB2aWRhIGEgbnVldmFzIGlkZWFzLgogICAgICAgICAgICA8L3A+CgogICAgICAgICAgICA8IS0tIEFjY2lvbmVzIENUQSAtLT4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iaGVyb19fY3RhLWNvbnRhaW5lciBoZXJvX19hbmltIGhlcm9fX2FuaW0tLTUiPgogICAgICAgICAgICAgICAgPGEgaHJlZj0iI3Byb3llY3RvcyIgY2xhc3M9Imhlcm9fX2J0biBoZXJvX19idG4tLXByaW1hcnkiIGlkPSJjdGEtY2Fzb3MtZXN0dWRpbyI+CiAgICAgICAgICAgICAgICAgICAgPHNwYW4+VmVyIENhc29zIGRlIEVzdHVkaW8g4oaTPC9zcGFuPgogICAgICAgICAgICAgICAgPC9hPgogICAgICAgICAgICAgICAgPGEgaHJlZj0iZG9jdW1lbnRvcy9jdi1wYXRyaWNpby1idXN0YW1hbnRlLnBkZiIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIiIGNsYXNzPSJoZXJvX19idG4gaGVyb19fYnRuLS1zZWNvbmRhcnkiIGlkPSJjdGEtY3YiIGFyaWEtbGFiZWw9IlZlciBDVyBlbiBQREYgKGFicmUgZW4gbnVldmEgcGVzdGHDsWEpIj4KICAgICAgICAgICAgICAgICAgICA8c3Bhbj5WZXIgQ1YgZW4gUERGIOKGlzwvc3Bhbj4KICAgICAgICAgICAgICAgIDwvYT4KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8IS0tIENhbmFsZXMgUHJvZmVzaW9uYWxlcyAtLT4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iaGVyb19fc29jaWFsIGhlcm9fX2FuaW0gaGVyb19fYW5pbS0tNiIgYXJpYS1sYWJlbD0iRW5sYWNlcyBhIHBlcmZpbGVzIHByb2Zlc2lvbmFsZXMiPgogICAgICAgICAgICAgICAgPGEgaHJlZj0iaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL3BhdHJpY2lvYnVzdGFtYW50ZWVndWlhLyIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIiIGNsYXNzPSJoZXJvX19zb2NpYWwtbGluayIKICAgICAgICAgICAgICAgICAgICBhcmlhLWxhYmVsPSJQZXJmaWwgZGUgTGlua2VkSW4gZGUgUGF0cmljbyBCdXN0YW1hbnRlIj4KICAgICAgICAgICAgICAgICAgICA8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJjdXJyZW50Q29sb3IiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgYXJpYS1oaWRkZW49InRydWUiPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZD0iTTE5IDBsLTE0YzAtMi43NjEgMC01IDIuMjM5LTUgNXYxNGMwIDIuNzYxIDIuMjM5IDUgNSA1aDE0YzIuNzYyIDAgNS0yLjIzOSA1LTV2LTE0YzAtMi43NjEtMi4yMzgtNS01LTV6bS0xMSAxOWgtM3YtMTFoM3YxMXptLTEuNS0xMi4yNjhjLS45NjYgMC0xLjc1LS43OS0xLjc1LTEuNzY0cy43ODQtMS43NjQgMS43NS0xLjc2NCAxLjc1Ljc5IDEuNzUgMS43NjQtLjc4MyAxLjc2NC0xLjc1IDEuNzY0em0xMy41IDEyLjI2OGgtM3YtNS42MDRjMC0zLjM2OC00LTMuMTEzLTQgMHY1LjYwNGgtM3YtMTFoM3YxLjc2NWMxLjM5Ni0yLjU4NiA3LTIuNzc3IDcgMi40NzZ2Ni43NTl6IiAvPgogICAgICAgICAgICAgICAgICAgIDwvc3ZnPgogICAgICAgICAgICAgICAgPC9hPgogICAgICAgICAgICAgICAgPGEgaHJlZj0iaHR0cHM6Ly93d3cuYmVoYW5jZS5uZXQvcGF0cmljaTUgYnVzdGFtYTEwIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciIgY2xhc3M9Imhlcm9fX3NvY2lhbC1saW5rIgogICAgICAgICAgICAgICAgICAgIGFyaWEtbGFiZWw9IlBvcnRhZm9saW8gZW4gQmVoYW5jZSBkZSBQYXRyaWNpbyBCdXN0YW1hbnRlIj4KICAgICAgICAgICAgICAgICAgICA8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJjdXJyZW50Q29sb3IiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgYXJpYS1oaWRkZW49InRydWUiPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZD0iTTIyIDdoLTd2LTJoN3Yyem0xLjcyNiAxMGMtLjQ0MiAxLjI5Ny0yLjAyOSAzLTUuMTAxIDMtMy4wNzQgMC01LjU2NC0xLjcyOS01LjU2NC01LjY3NSAwLTMuOTEgMi4zMjUtNS45MiA1LjQ2Ni01LjkyIDMuMDgyIDAgNC45NjQgMS43ODIgNS4zNzUgNC40MjYuMDc4LjUwNi4xMDkgMS4xODguMDk1IDIuMTRoLTguMDI3Yy4xMyAzLjIxMSAzLjQ4MyAzLjMxMiA0LjU4OCAyLjAyOWgzLjE2OHptLTcuNjg2LTRoNC45NjVjLS4xMDUtMS41NDctMS4xMzYtMi4yMTktMi40NzctMi4yMTktMS40NjYgMC0yLjI3Ny43NjgtMi40ODggMi4yMTl6bS05LjU3NCA2Ljk4OGgtNi40NjZ2LTE0Ljk2N2g2Ljk1M2M1LjQ3Ni4wODEgNS41OCA1LjQ0NCAyLjcyIDYuOTA2IDMuNDYxIDEuMjYgMy41NzcgOC4wNjEtMy4yMDcgOC4wNjF6bS0zLjQ2Ni04Ljk4OGgzLjU4NGMyLjUwOCAwIDIuOTA2LTMtLjMxMi0zaC0zLjI3MnYzem0zLjM5MSAzaC0zLjM5MXYzLjAxNmgzLjM0MWMzLjA1NSAwIDIuODY4LTMuMDE2LjA1LTMuMDE2eiIgLz4KICAgICAgICAgICAgICAgICAgICA8L3N2Zz4KICAgICAgICAgICAgICAgIDwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2hlYWRlcj4KCiAgICA8bWFpbiBpZD0iY29udGVuaWRvLXByaW5jaXBhbCI+CiAgICAgICAgPCEtLSA9PT09PT0gU09CUkUgTcONID09PT09PSAtLT4KICAgICAgICA8c2VjdGlvbiBjbGFzcz0iYWJvdXQtbWUgZmxhdC1zZWN0aW9uIHJldmVhbCIgaWQ9InNvYnJlLW1pIj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iYWJvdXQtbWVfX2JvZHkiPgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iYWJvdXQtbWVfX3RleHQiPgogICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJzZWN0aW9uLWJhZGdlIj5QZXJmaWwgUHJvZmVzaW9uYWw8L3NwYW4+CiAgICAgICAgICAgICAgICAgICAgPGgyIGNsYXNzPSJhYm91dC1tZV9fdGl0bGUiPlNvYnJlIE3DrTwvaDI+CiAgICAgICAgICAgICAgICAgICAgPHAgY2xhc3M9ImFib3V0LW1lX19kZXNjcmlwdGlvbiI+RGlzZcOxYWRvciBVWC9VSSBlbmZvY2FkbyBlbiBjb25jZXB0dWFsaXphciB5IGNvbnN0cnVpciBwcm9kdWN0b3MgdGVjbm9sw7NnaWNvcyBkZXNkZSBsYSBpZGVhIGhhc3RhIGVsIHByb3RvdGlwbyBmdW5jaW9uYWwuIENvbiBiYXNlIGVuIHBzaWNvbG9nw61hIHkgZGlzZcOxbyBtdWx0aW1lZGlhLCBpbnRlZ3JvIGludmVzdGlnYWNpw7NuIGRlIHVzdWFyaW9zLCBhcnF1aXRlY3R1cmEgZGUgaW5mb3JtYWNpw7NuIHkgaGVycmFtaWVudGFzIGRlIElBIGdlbmVyYXRpdmEgcGFyYSByZXNvbHZlciBwcm9ibGVtYXMgcmVhbGVzIG1lZGlhbnRlIGludGVyZmFjZXMgY2xhcmFzLCBodW1hbmFzIGUgaW50dWl0aXZhcy48L3A+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImFib3V0LW1lX19waG90by13cmFwcGVyIj4KICAgICAgICAgICAgICAgICAgICA8aW1nIHNyYz0iYXNzZXRzL3BhdHJpY2lvLWJ1c3RhbWFudGUuanBnIiBhbHQ9IlBhdHJpY28gQnVzdGFtYW50ZSDigJQgQUkgUHJvZHVjdCBEZXNpZ25lciAmYW1wOyBVWC9VSSBTcGVjaWFsaXN0IgogICAgICAgICAgICAgICAgICAgICAgICBjbGFzcz0iYWJvdXQtbWVfX3Bob3RvIiBsb2FkaW5nPSJsYXp5IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCI+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9zZWN0aW9uPgoKICAgICAgICA8IS0tID09PT09PSBDT01QT05FTlRFIDI6IEVYUEVSSUVOQ0lBID09PT09PSAtLT4KICAgICAgICA8c2VjdGlvbiBjbGFzcz0iZXhwZXJpZW5jZSByZXZlYWwiIGlkPSJleHBlcmllbmNpYSIgYXJpYS1sYWJlbGxlZGJ5PSJleHBlcmllbmNpYS10aXR1bG8iPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uLWhlYWRpbmciPgogICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9InNlY3Rpb24taGVhZGluZ19fYmFkZ2UiPlRyYXllY3RvcmlhIFByb2Zlc2lvbmFsPC9zcGFuPgogICAgICAgICAgICAgICAgPGgyIGNsYXNzPSJzZWN0aW9uLWhlYWRpbmdfX3RpdGxlIiBpZD0iZXhwZXJpZW5jaWEtdGl0dWxvIj5FeHBlcmllbmNpYTwvaDI+CiAgICAgICAgICAgICAgICA8cCBjbGFzcz0ic2VjdGlvbi1oZWFkaW5nX19zdWJ0aXRsZSI+RGlzZcOxbyBkZSBwcm9kdWN0byBlIGludGVyZmFjZXMgZW4gb3JnYW5pemFjaW9uZXMgcXVlIGNvbnN0cnV5ZW4gZGVzZGUgY2Vyby48L3A+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhwZXJpZW5jZV9fZ3JpZCI+CiAgICAgICAgICAgICAgICA8IS0tIFJvbCAxOiA4QnJhaW5zIC0tPgogICAgICAgICAgICAgICAgPGFydGljbGUgY2xhc3M9ImV4cGVyaWVuY2UtY2FyZCI+CiAgICAgICAgICAgICAgICAgICAgPGhlYWRlciBjbGFzcz0iZXhwZXJpZW5jZS1jYXJkX19oZWFkZXIiPgogICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJleHBlcmllbmNlLWNhcmRfX3JvbGUtbWV0YSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iZXhwZXJpZW5jZS1jYXJkX19jb21wYW55Ij44QnJhaW5zPC9zcGFuPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzPSJleHBlcmllbmNlLWNhcmRfX3JvbGUiPkFJIFByb2R1Y3QgRGVzaWduZXI8L2gzPgogICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICAgICAgPHRpbWUgY2xhc3M9ImV4cGVyaWVuY2UtY2FyZF9fcGVyaW9kIj4yMDI0IOKAlCBQcmVzZW50ZTwvdGltZT4KICAgICAgICAgICAgICAgICAgICA8L2hlYWRlcj4KICAgICAgICAgICAgICAgICAgICA8dWwgY2xhc3M9ImV4cGVyaWVuY2UtY2FyZF9fbWV0cmljcyI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxsaSBjbGFzcz0ibWV0cmljLWl0ZW0iPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9Im1ldHJpYy1kZXNjIj5EaXNlw7FvIGRlIHByb2R1Y3RvIHkgYXJxdWl0ZWN0dXJhIGRlIGludGVyYWNjacOzbiBwYXJhIHBsYXRhZm9ybWEgZGUgYXV0b21hdGl6YWNpw7NuIGRlIGRpc2XDsW8uPC9zcGFuPgogICAgICAgICAgICAgICAgICAgICAgICA8L2xpPgogICAgICAgICAgICAgICAgICAgICAgICA8bGkgY2xhc3M9Im1ldHJpYy1pdGVtIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJtZXRyaWMtZGVzYyI+Q29uY2VwdHVhbGl6YWNpw7NuIGRlIGZsdWpvcyBjb24gYWdlbnRlcyBzZWN1ZW5jaWFsZXMgeSBjb21wb25lbnRlcyBkZSBzdXBlcnZpc2nDs24gPGVtPkh1bWFuLWluLXRoZS1Mb29wPC9lbT4gKEhJVEwpLjwvc3Bhbj4KICAgICAgICAgICAgICAgICAgICAgICAgPC9saT4KICAgICAgICAgICAgICAgICAgICAgICAgPGxpIGNsYXNzPSJtZXRyaWMtaXRlbSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0ibWV0cmljLWRlc2MiPlByb3RvdGlwYWRvIGludGVyYWN0aXZvIGRlIGFsdGEgZmlkZWxpZGFkIHBhcmEgdmFsaWRhY2nDs24gZnVuY2lvbmFsLjwvc3Bhbj4KICAgICAgICAgICAgICAgICAgICAgICAgPC9saT4KICAgICAgICAgICAgICAgICAgICA8L3VsPgogICAgICAgICAgICAgICAgPC9hcnRpY2xlPgoKICAgICAgICAgICAgICAgIDwhLS0gUm9sIDI6IEd1YXVNYXRjaC5jbCAtLT4KICAgICAgICAgICAgICAgIDxhcnRpY2xlIGNsYXNzPSJleHBlcmllbmNlLWNhcmQiPgogICAgICAgICAgICAgICAgICAgIDxoZWFkZXIgY2xhc3M9ImV4cGVyaWVuY2UtY2FyZF9faGVhZGVyIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhwZXJpZW5jZS1jYXJkX19yb2xlLW1ldGEiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImV4cGVyaWVuY2UtY2FyZF9fY29tcGFueSI+R3VhdU1hdGNoLmNsPC9zcGFuPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzPSJleHBlcmllbmNlLWNhcmRfX3JvbGUiPlByb2R1Y3QgVVggQXJjaGl0ZWN0PC9oMz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgICAgIDx0aW1lIGNsYXNzPSJleHBlcmllbmNlLWNhcmRfX3BlcmlvZCI+MjAyNCDigJQgUHJlc2VudGU8L3RpbWU+CiAgICAgICAgICAgICAgICAgICAgPC9oZWFkZXI+CiAgICAgICAgICAgICAgICAgICAgPHVsIGNsYXNzPSJleHBlcmllbmNlLWNhcmRfX21ldHJpY3MiPgogICAgICAgICAgICAgICAgICAgICAgICA8bGkgY2xhc3M9Im1ldHJpYy1pdGVtIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJtZXRyaWMtZGVzYyI+RGlzZcOxbyBpbnRlZ3JhbCBkZSBleHBlcmllbmNpYSBNb2JpbGUtRmlyc3QgeSBhcnF1aXRlY3R1cmEgZGUgZmx1am9zIGRlIG9uYm9hcmRpbmcgeSBtYXRjaC48L3NwYW4+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICAgICAgICAgICAgICAgIDxsaSBjbGFzcz0ibWV0cmljLWl0ZW0iPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9Im1ldHJpYy1kZXNjIj5JbnRlZ3JhY2nDs24gZGUgbm9ybWF0aXZhcyBkZSB0ZW5lbmNpYSByZXNwb25zYWJsZSAoTGV5IDIxLjAyMCkgZW4gZWwgam91cm5leSBkZWwgdXN1YXJpby48L3NwYW4+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICAgICAgICAgICAgICAgIDxsaSBjbGFzcz0ibWV0cmljLWl0ZW0iPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9Im1ldHJpYy1kZXNjIj5FeHBsb3JhY2nDs24gZSBpbnRlZ3JhY2nDs24gZGUgbW9kZWxvcyBkZSBhc2lzdGVuY2lhIGRlIElBIG1lZGlhbnRlIEdvb2dsZSBBSSBTdHVkaW8uPC9zcGFuPgogICAgICAgICAgICAgICAgICAgICAgICA8L2xpPgogICAgICAgICAgICAgICAgICAgIDwvdWw+CiAgICAgICAgICAgICAgICA8L2FydGljbGU+CgogICAgICAgICAgICAgICAgPCEtLSBSb2wgMzogQml0emNvZGUgLS0+CiAgICAgICAgICAgICAgICA8YXJ0aWNsZSBjbGFzcz0iZXhwZXJpZW5jZS1jYXJkIj4KICAgICAgICAgICAgICAgICAgICA8aGVhZGVyIGNsYXNzPSJleHBlcmllbmNlLWNhcmRfX2hlYWRlciI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImV4cGVyaWVuY2UtY2FyZF9fcm9sZS1tZXRhIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJleHBlcmllbmNlLWNhcmRfX2NvbXBhbnkiPkJpdHpjb2RlPC9zcGFuPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzPSJleHBlcmllbmNlLWNhcmRfX3JvbGUiPkRpc2XDsWFkb3IgVVgvVUkgJmFtcDsgUHJvZHVjdCBTcGVjaWFsaXN0PC9oMz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgICAgIDx0aW1lIGNsYXNzPSJleHBlcmllbmNlLWNhcmRfX3BlcmlvZCI+MjAxNyDigJQgMjAyMTwvdGltZT4KICAgICAgICAgICAgICAgICAgICA8L2hlYWRlcj4KICAgICAgICAgICAgICAgICAgICA8dWwgY2xhc3M9ImV4cGVyaWVuY2UtY2FyZF9fbWV0cmljcyI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxsaSBjbGFzcz0ibWV0cmljLWl0ZW0iPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9Im1ldHJpYy1kZXNjIj5MaWRlcmF6Z28gZGUgZGlzZcOxbyBlbiBtw7psdGlwbGVzIHByb3llY3RvcyBkZSBzb2Z0d2FyZSB5IHBsYXRhZm9ybWFzIHdlYiBiYWpvIG1ldG9kb2xvZ8OtYSBTY3J1bS48L3NwYW4+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICAgICAgICAgICAgICAgIDxsaSBjbGFzcz0ibWV0cmljLWl0ZW0iPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9Im1ldHJpYy1kZXNjIj5DcmVhY2nDs24geSBtYW50ZW5pbWllbnRvIGRlIHNpc3RlbWFzIGRlIGRpc2XDsW8gZW4gRmlnbWEgcGFyYSBhY2VsZXJhciBlbCBoYW5kb2ZmIGEgaW5nZW5pZXLDrWEuPC9zcGFuPgogICAgICAgICAgICAgICAgICAgICAgICA8L2xpPgogICAgICAgICAgICAgICAgICAgICAgICA8bGkgY2xhc3M9Im1ldHJpYy1pdGVtIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJtZXRyaWMtZGVzYyI+RGlzY292ZXJ5IGRlIHVzdWFyaW9zLCB3aXJlZnJhbWluZyB5IHByb3RvdGlwYWRvIGludGVyYWN0aXZvIGRlIGZsdWpvcyBjb21wbGVqb3MuPC9zcGFuPgogICAgICAgICAgICAgICAgICAgICAgICA8L2xpPgogICAgICAgICAgICAgICAgICAgIDwvdWw+CiAgICAgICAgICAgICAgICA8L2FydGljbGU+CgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L3NlY3Rpb24+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>Patricio Bustamante | AI Product Designer &amp; UX/UI Specialist</title>
+    <meta name="description"
+        content="AI Product Designer y UX/UI Specialist enfocado en conceptualizar y construir productos digitales interactivos e interfaces inteligentes. Con base en psicología y diseño multimedia, integra investigación de usuarios, arquitectura de información y herramientas de IA generativa.">
+    <meta name="keywords"
+        content="AI Product Designer, UX/UI Specialist, Prototipado Interactivo, Google AI Studio, Design Systems, Figma, WCAG, Patricio Bustamante, Santiago Chile">
+    <meta name="author" content="Patricio Bustamante Eguía">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="ZoaqaTFdm6SPokONX_JnJTG2UCXQzA2PChAxZGBjli8" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:title" content="Patricio Bustamante | AI Product Designer &amp; UX/UI Specialist">
+    <meta property="og:description"
+        content="Diseño productos digitales interactivos e interfaces inteligentes, conectando metodologías centradas en las personas con capacidades de IA generativa.">
+    <meta property="og:image" content="assets/patricio-bustamante.jpg">
+    <meta property="og:type" content="profile">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patricio Bustamante | AI Product Designer &amp; UX/UI Specialist">
+    <meta name="twitter:description"
+        content="Diseño productos digitales interactivos e interfaces inteligentes, conectando metodologías centradas en las personas con capacidades de IA generativa.">
+    <meta name="twitter:image" content="assets/patricio-bustamante.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Person", "ProfessionalService"],
+      "name": "Patricio Bustamante",
+      "jobTitle": "AI Product Designer & UX/UI Specialist",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santiago",
+        "addressCountry": "Chile"
+      },
+      "knowsAbout": [
+        "UX/UI Design",
+        "Product Design",
+        "Information Architecture",
+        "Scalable Design Systems",
+        "Accessibility WCAG 2.1",
+        "Data-Driven UX",
+        "Human-in-the-Loop AI"
+      ],
+      "image": "assets/patricio-bustamante.jpg",
+      "url": "https://patriciobustamanteeguia.github.io" 
+    }
+    </script>
+</head>
+
+<body>
+    <noscript>
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #F8FAFC; z-index: 999999; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Inter', sans-serif; padding: 20px;">
+            <div>
+                <h1 style="color: #0F172A; font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.02em;">Acceso Restringido</h1>
+                <p style="color: #334155; max-width: 500px; margin: 1rem auto;">Por razones de accesibilidad y experiencia interactiva, este sitio requiere JavaScript activado. Por favor, actívalo en la configuración de tu navegador.</p>
+            </div>
+        </div>
+        <style>body { visibility: hidden !important; }</style>
+    </noscript>
+
+    <!-- ====== NAVEGACIÓN ====== -->
+    <nav class="header-nav" id="header-nav" aria-label="Navegación principal">
+        <a href="#inicio" class="header-nav__logo" aria-label="Ir al inicio de Patricio Bustamante">PBE</a>
+        <ul class="header-nav__list" id="navList">
+            <li class="header-nav__item"><a href="#inicio" class="header-nav__link">Inicio</a></li>
+            <li class="header-nav__item"><a href="#sobre-mi" class="header-nav__link">Sobre Mí</a></li>
+            <li class="header-nav__item"><a href="#experiencia" class="header-nav__link">Experiencia</a></li>
+            <li class="header-nav__item"><a href="#habilidades" class="header-nav__link">Habilidades</a></li>
+            <li class="header-nav__item"><a href="#proyectos" class="header-nav__link">Casos de Estudio</a></li>
+            <li class="header-nav__item"><a href="#certificaciones" class="header-nav__link">Certificaciones</a></li>
+            <li class="header-nav__item"><a href="#contacto" class="header-nav__link">Contacto</a></li>
+        </ul>
+        <button class="header-nav__hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navList">
+            <span class="header-nav__hamburger-bar"></span>
+            <span class="header-nav__hamburger-bar"></span>
+            <span class="header-nav__hamburger-bar"></span>
+        </button>
+    </nav>
+
+    <!-- ====== HERO ====== -->
+    <header class="hero" id="inicio">
+        <div class="hero__content hero__content--animated">
+            <!-- Badge superior de disponibilidad -->
+            <div class="hero__badge hero__anim hero__anim--1" role="status" aria-label="Estado: Disponible para nuevos proyectos o consultoría">
+                <span class="hero__badge-dot" aria-hidden="true"></span>
+                <span class="hero__badge-text">Disponible para nuevos proyectos / Consultoría</span>
+            </div>
+
+            <h1 class="hero__title hero__anim hero__anim--2">Patricio Bustamante Eguía</h1>
+            <h2 class="hero__role hero__anim hero__anim--3">AI Product Designer &amp; UX/UI Specialist</h2>
+            <p class="hero__description hero__anim hero__anim--4">
+                Diseño productos digitales interactivos e interfaces inteligentes, conectando metodologías centradas en las personas con capacidades de IA generativa para dar vida a nuevas ideas.
+            </p>
+
+            <!-- Acciones CTA -->
+            <div class="hero__cta-container hero__anim hero__anim--5">
+                <a href="#proyectos" class="hero__btn hero__btn--primary" id="cta-casos-estudio">
+                    <span>Ver Casos de Estudio ↓</span>
+                </a>
+                <a href="documentos/cv-patricio-bustamante.pdf" target="_blank" rel="noopener" class="hero__btn hero__btn--secondary" id="cta-cv" aria-label="Ver CV en PDF (abre en nueva pestaña)">
+                    <span>Ver CV en PDF ↗</span>
+                </a>
+            </div>
+
+            <!-- Canales Profesionales -->
+            <div class="hero__social hero__anim hero__anim--6" aria-label="Enlaces a perfiles profesionales">
+                <a href="https://www.linkedin.com/in/patriciobustamanteeguia/" target="_blank" rel="noopener" class="hero__social-link"
+                    aria-label="Perfil de LinkedIn de Patricio Bustamante">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="https://www.behance.net/patricibustama10" target="_blank" rel="noopener" class="hero__social-link"
+                    aria-label="Portafolio en Behance de Patricio Bustamante">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path
+                            d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="contenido-principal">
+        <!-- ====== SOBRE MÍ ====== -->
+        <section class="about-me flat-section reveal" id="sobre-mi">
+            <div class="about-me__body">
+                <div class="about-me__text">
+                    <span class="section-badge">Perfil Profesional</span>
+                    <h2 class="about-me__title">Sobre Mí</h2>
+                    <p class="about-me__description">Diseñador UX/UI enfocado en conceptualizar y construir productos tecnológicos desde la idea hasta el prototipo funcional. Con base en psicología y diseño multimedia, integro investigación de usuarios, arquitectura de información y herramientas de IA generativa para resolver problemas reales mediante interfaces claras, humanas e intuitivas.</p>
+                </div>
+                <div class="about-me__photo-wrapper">
+                    <img src="assets/patricio-bustamante.jpg" alt="Patricio Bustamante — AI Product Designer &amp; UX/UI Specialist"
+                        class="about-me__photo" loading="lazy" width="120" height="120">
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== COMPONENTE 2: EXPERIENCIA ====== -->
+        <section class="experience reveal" id="experiencia" aria-labelledby="experiencia-titulo">
+            <div class="section-heading">
+                <span class="section-heading__badge">Trayectoria Profesional</span>
+                <h2 class="section-heading__title" id="experiencia-titulo">Experiencia</h2>
+                <p class="section-heading__subtitle">Diseño de producto e interfaces en organizaciones que construyen desde cero.</p>
+            </div>
+
+            <div class="experience__grid">
+                <!-- Rol 1: 8Brains -->
+                <article class="experience-card">
+                    <header class="experience-card__header">
+                        <div class="experience-card__role-meta">
+                            <span class="experience-card__company">8Brains</span>
+                            <h3 class="experience-card__role">AI Product Designer</h3>
+                        </div>
+                        <time class="experience-card__period">2024 — Presente</time>
+                    </header>
+                    <ul class="experience-card__metrics">
+                        <li class="metric-item">
+                            <span class="metric-desc">Diseño de producto y arquitectura de interacción para plataforma de automatización de diseño.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-desc">Conceptualización de flujos con agentes secuenciales y componentes de supervisión <em>Human-in-the-Loop</em> (HITL).</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-desc">Prototipado interactivo de alta fidelidad para validación funcional.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Rol 2: GuauMatch.cl -->
+                <article class="experience-card">
+                    <header class="experience-card__header">
+                        <div class="experience-card__role-meta">
+                            <span class="experience-card__company">GuauMatch.cl</span>
+                            <h3 class="experience-card__role">Product UX Architect</h3>
+                        </div>
+                        <time class="experience-card__period">2024 — Presente</time>
+                    </header>
+                    <ul class="experience-card__metrics">
+                        <li class="metric-item">
+                            <span class="metric-desc">Diseño integral de experiencia Mobile-First y arquitectura de flujos de onboarding y match.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-desc">Integración de normativas de tenencia responsable (Ley 21.020) en el journey del usuario.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-desc">Exploración e integración de modelos de asistencia de IA mediante Google AI Studio.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Rol 3: Bitzcode -->
+                <article class="experience-card">
+                    <header class="experience-card__header">
+                        <div class="experience-card__role-meta">
+                            <span class="experience-card__company">Bitzcode</span>
+                            <h3 class="experience-card__role">Diseñador UX/UI &amp; Product Specialist</h3>
+                        </div>
+                        <time class="experience-card__period">2017 — 2021</time>
+                    </header>
+                    <ul class="experience-card__metrics">
+                        <li class="metric-item">
+                            <span class="metric-desc">Liderazgo de diseño en múltiples proyectos de software y plataformas web bajo metodología Scrum.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-desc">Creación y mantenimiento de sistemas de diseño en Figma para acelerar el handoff a ingeniería.</span>
+                        </li>
+                        <li class="metric-item">
+                            <span class="metric-desc">Discovery de usuarios, wireframing y prototipado interactivo de flujos complejos.</span>
+                        </li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ====== HABILIDADES ====== -->
+        <section class="skills reveal" id="habilidades" aria-labelledby="habilidades-titulo">
+            <div class="section-heading">
+                <span class="section-heading__badge">Capacidades Clave</span>
+                <h2 class="section-heading__title" id="habilidades-titulo">Áreas de Expertise</h2>
+                <p class="section-heading__subtitle">Metodologías, herramientas y estándares para crear productos digitales centrados en las personas.</p>
+            </div>
+            <div class="skills__grid">
+                <div class="skill-card">
+                    <h3 class="skill-card__title">UX/UI Design &amp; Product Creation</h3>
+                    <ul class="skill-card__list">
+                        <li>Diseño Centrado en el Usuario (UCD) &amp; Design Thinking</li>
+                        <li>Sistemas de diseño escalables y componentes reutilizables en Figma (Auto Layout)</li>
+                        <li>Arquitectura de información, wireframes y flujos de usuario complejos</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-card__title">Ecosistema Google AI &amp; Prototipado</h3>
+                    <ul class="skill-card__list">
+                        <li>Orquestación de modelos con Google AI Studio, Gemini y Gemini Notebook</li>
+                        <li>Experimentación y prototipado rápido con Stitch y Antigravity</li>
+                        <li>Diseño de flujos interactivos Human-in-the-Loop (HITL)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-card__title">Accesibilidad, Normativas &amp; Hand-off</h3>
+                    <ul class="skill-card__list">
+                        <li>Accesibilidad digital (WCAG 2.1 AA) y diseño inclusivo</li>
+                        <li>Mapeo de reglas de negocio, validaciones regulatorias y casos de borde</li>
+                        <li>Comprensión técnica (HTML/CSS) para comunicación fluida con desarrollo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CASOS DE ESTUDIO ====== -->
+        <section class="projects reveal" id="proyectos" aria-labelledby="proyectos-titulo">
+            <div class="section-heading">
+                <span class="section-heading__badge">Portafolio Seleccionado</span>
+                <h2 class="section-heading__title" id="proyectos-titulo">Casos de Estudio</h2>
+                <p class="section-heading__subtitle">Soluciones de diseño aplicadas a retos de negocio reales y validación con usuarios.</p>
+            </div>
+            <div class="projects__grid">
+                <!-- Tech Future -->
+                <div class="project-card">
+                    <div class="project-card__image-container"
+                        onclick="openModal('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80', 'Tech Future')"
+                        aria-label="Ver imagen de Tech Future en grande" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"
+                            alt="Tech Future — Innovación Tecnológica" class="project-card__image" loading="lazy">
+                        <div class="project-card__overlay" aria-hidden="true">
+                            <span class="project-card__zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__bootcamp">Investigación UX</span>
+                        <h3 class="project-card__title">Tech Future</h3>
+                        <p class="project-card__description">Caso de estudio sobre ecosistemas digitales e innovación estratégica impulsada por IA.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">UX Strategy</span>
+                            <span class="project-card__tag">Product Design</span>
+                            <span class="project-card__tag">Gen AI</span>
+                        </div>
+                        <a href="documentos/TechFuture.pdf" target="_blank" rel="noopener"
+                            class="project-card__btn project-card__btn--primary">Ver Caso PDF ↗</a>
+                    </div>
+                </div>
+
+                <!-- DressUp -->
+                <div class="project-card">
+                    <div class="project-card__image-container"
+                        onclick="openModal('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80', 'DressUp')"
+                        aria-label="Ver imagen de DressUp en grande" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"
+                            alt="DressUp — E-commerce de moda sostenible" class="project-card__image" loading="lazy">
+                        <div class="project-card__overlay" aria-hidden="true">
+                            <span class="project-card__zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__bootcamp">U. del Desarrollo</span>
+                        <h3 class="project-card__title">DressUp</h3>
+                        <p class="project-card__description">E-commerce de moda sostenible enfocado en optimizar el journey del comprador y reducir fricción.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">UX Research</span>
+                            <span class="project-card__tag">Figma</span>
+                            <span class="project-card__tag">E-commerce</span>
+                        </div>
+                        <a href="documentos/caso-dressup.pdf" target="_blank" rel="noopener"
+                            class="project-card__btn project-card__btn--primary">Ver Caso PDF ↗</a>
+                    </div>
+                </div>
+
+                <!-- Coyote Bags -->
+                <div class="project-card">
+                    <div class="project-card__image-container"
+                        onclick="openModal('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80', 'Coyote Bags')"
+                        aria-label="Ver imagen de Coyote Bags en grande" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80"
+                            alt="Coyote Bags — Rediseño de checkout" class="project-card__image" loading="lazy">
+                        <div class="project-card__overlay" aria-hidden="true">
+                            <span class="project-card__zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__bootcamp">Talento Digital</span>
+                        <h3 class="project-card__title">Coyote Bags</h3>
+                        <p class="project-card__description">Optimización del checkout y rediseño visual para incrementar tasa de conversión en marca urbana.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">UI Design</span>
+                            <span class="project-card__tag">Checkout</span>
+                            <span class="project-card__tag">Branding</span>
+                        </div>
+                        <a href="documentos/CoyoteBags.pdf" target="_blank" rel="noopener"
+                            class="project-card__btn project-card__btn--primary">Ver Caso PDF ↗</a>
+                    </div>
+                </div>
+
+                <!-- Sr. Compost -->
+                <div class="project-card">
+                    <div class="project-card__image-container"
+                        onclick="openModal('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80', 'Sr. Compost')"
+                        aria-label="Ver imagen de Sr. Compost en grande" tabindex="0">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
+                            alt="Sr. Compost — Plataforma de gestión de residuos" class="project-card__image"
+                            loading="lazy">
+                        <div class="project-card__overlay" aria-hidden="true">
+                            <span class="project-card__zoom-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <span class="project-card__bootcamp">Talento Digital</span>
+                        <h3 class="project-card__title">Sr. Compost</h3>
+                        <p class="project-card__description">Plataforma interactiva para la trazabilidad y gestión comunitaria de residuos orgánicos.</p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">App Design</span>
+                            <span class="project-card__tag">Sostenibilidad</span>
+                            <span class="project-card__tag">UX</span>
+                        </div>
+                        <a href="documentos/Sr_Compost.pdf" target="_blank" rel="noopener"
+                            class="project-card__btn project-card__btn--primary">Ver Caso PDF ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== COMPONENTE 3: GRID DE CERTIFICACIONES ====== -->
+        <section class="certifications reveal" id="certificaciones" aria-labelledby="certificaciones-titulo">
+            <div class="section-heading">
+                <span class="section-heading__badge">Acreditaciones &amp; Estándares</span>
+                <h2 class="section-heading__title" id="certificaciones-titulo">Certificaciones y Diplomas</h2>
+                <p class="section-heading__subtitle">Validación académica continua en Diseño de Producto, Gestión Ágil e Inteligencia Artificial.</p>
+            </div>
+
+            <div class="certifications__grid" role="list">
+                <!-- Cert 1: UDD -->
+                <div class="cert-card" role="listitem" tabindex="0" aria-describedby="tooltip-udd">
+                    <div class="cert-card__header">
+                        <span class="cert-card__category">Bootcamp UX/UI</span>
+                        <span class="cert-card__verified" title="Certificado verificado">
+                            <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Verificado
+                        </span>
+                    </div>
+                    <div class="cert-card__body">
+                        <h3 class="cert-card__title">Diplomado UX/UI Designer</h3>
+                        <p class="cert-card__institution">Universidad del Desarrollo (UDD) · 2024</p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <a href="assets/certificaciones/diploma-udd.pdf" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver Diploma UDD en PDF">
+                            <span>Ver Diploma</span>
+                            <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                    <div id="tooltip-udd" role="tooltip" class="cert-card__tooltip">
+                        Especialización de 400+ hrs en User Research, Arquitectura de Información, Prototipado Avanzado y Handoff técnico.
+                    </div>
+                </div>
+
+                <!-- Cert 2: Talento Digital -->
+                <div class="cert-card" role="listitem" tabindex="0" aria-describedby="tooltip-td">
+                    <div class="cert-card__header">
+                        <span class="cert-card__category">Bootcamp UX/UI</span>
+                        <span class="cert-card__verified" title="Credencial digital verificada">
+                            <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Acreditada
+                        </span>
+                    </div>
+                    <div class="cert-card__body">
+                        <h3 class="cert-card__title">Diseñador UX/UI Certificado</h3>
+                        <p class="cert-card__institution">Talento Digital para Chile · 2024</p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <a href="https://acreditta.com/credential/122a05d9-c122-4c4f-af32-93916e08aa44" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver credencial digital en Acreditta">
+                            <span>Ver Credencial</span>
+                            <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                    <div id="tooltip-td" role="tooltip" class="cert-card__tooltip">
+                        Insignia oficial validada por SENCE en diseño ágil, evaluación heurística y testeos de usabilidad empíricos.
+                    </div>
+                </div>
+
+                <!-- Cert 3: Gestión Ágil -->
+                <div class="cert-card" role="listitem" tabindex="0" aria-describedby="tooltip-agil">
+                    <div class="cert-card__header">
+                        <span class="cert-card__category">Gestión de Proyectos</span>
+                        <span class="cert-card__verified" title="Certificado oficial">
+                            <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Verificado
+                        </span>
+                    </div>
+                    <div class="cert-card__body">
+                        <h3 class="cert-card__title">Diplomado Diseño y Gestión Ágil</h3>
+                        <p class="cert-card__institution">Diplomado Profesional · 2023</p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <a href="assets/certificaciones/diplomado-gestion-agil.pdf" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver certificado de Diplomado Diseño y Gestión Ágil">
+                            <span>Ver Certificado</span>
+                            <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                    <div id="tooltip-agil" role="tooltip" class="cert-card__tooltip">
+                        Dominio de Scrum, Kanban, gestión de prioridades de producto y articulación estratégica con equipos de ingeniería.
+                    </div>
+                </div>
+
+                <!-- Cert 4: Design Thinking UPLA -->
+                <div class="cert-card" role="listitem" tabindex="0" aria-describedby="tooltip-dt">
+                    <div class="cert-card__header">
+                        <span class="cert-card__category">Innovación &amp; UX</span>
+                        <span class="cert-card__verified" title="Certificado oficial">
+                            <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Verificado
+                        </span>
+                    </div>
+                    <div class="cert-card__body">
+                        <h3 class="cert-card__title">Especialización en Design Thinking</h3>
+                        <p class="cert-card__institution">UPLA · 2023</p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <a href="assets/certificaciones/design-thinking-upla.pdf" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver certificado de Design Thinking UPLA">
+                            <span>Ver Certificado</span>
+                            <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                    <div id="tooltip-dt" role="tooltip" class="cert-card__tooltip">
+                        Técnicas de descubrimiento de problemas, síntesis de hallazgos, ideación y validación rápida con stakeholders.
+                    </div>
+                </div>
+
+                <!-- Cert 5: HTML5 + CSS -->
+                <div class="cert-card" role="listitem" tabindex="0" aria-describedby="tooltip-web">
+                    <div class="cert-card__header">
+                        <span class="cert-card__category">Desarrollo Frontend</span>
+                        <span class="cert-card__verified" title="Certificado oficial">
+                            <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Verificado
+                        </span>
+                    </div>
+                    <div class="cert-card__body">
+                        <h3 class="cert-card__title">Diseño Web Semántico HTML5 + CSS</h3>
+                        <p class="cert-card__institution">Acreditación Técnica · 2022</p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <a href="assets/certificaciones/diseno-web-html5css.png" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver certificado de Diseño Web HTML5 y CSS">
+                            <span>Ver Certificado</span>
+                            <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                    <div id="tooltip-web" role="tooltip" class="cert-card__tooltip">
+                        Estándares de accesibilidad WCAG AA/AAA, diseño responsive, CSS Grid, Flexbox y optimización de carga web.
+                    </div>
+                </div>
+
+                <!-- Cert 6: IA Generativa -->
+                <div class="cert-card" role="listitem" tabindex="0" aria-describedby="tooltip-ia">
+                    <div class="cert-card__header">
+                        <span class="cert-card__category">Inteligencia Artificial</span>
+                        <span class="cert-card__verified" title="Certificado oficial">
+                            <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Verificado
+                        </span>
+                    </div>
+                    <div class="cert-card__body">
+                        <h3 class="cert-card__title">Fundamentos de IA Generativa</h3>
+                        <p class="cert-card__institution">Certificación Especializada · 2024</p>
+                    </div>
+                    <div class="cert-card__footer">
+                        <a href="assets/certificaciones/ia-generativa.pdf" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver certificado de IA Generativa">
+                            <span>Ver Certificado</span>
+                            <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                    <div id="tooltip-ia" role="tooltip" class="cert-card__tooltip">
+                        Estrategias de co-creación con LLMs, diseño de interfaces generativas y consideraciones éticas en UX para IA.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====== CREDENCIALES VERIFICADAS (Credly) ====== -->
+            <div class="credly-section reveal">
+                <h3 class="credly-section__title">Credenciales Verificadas</h3>
+                <p class="credly-section__subtitle">Insignias digitales oficiales con verificación criptográfica en tiempo real a través de Credly</p>
+                <div class="credly-grid credly-grid--4col">
+                    <a class="credly-badge" href="https://www.credly.com/badges/2d0f3101-3be5-4b0d-9fc1-9aa9165612ef/public_url" target="_blank" rel="noopener">
+                        <span class="credly-badge__arrow">↗</span>
+                        <img src="https://images.credly.com/images/ea3eec65-ddad-4242-9c59-1defac0fa2d9/image.png" alt="Google AI Essentials" class="credly-badge__img" loading="lazy">
+                        <span class="credly-badge__name">Google AI Essentials</span>
+                        <span class="credly-badge__issuer">Coursera · 2026</span>
+                    </a>
+
+                    <a class="credly-badge" href="https://www.credly.com/badges/42b4132c-21c0-46c6-82f0-089e8620098f/public_url" target="_blank" rel="noopener">
+                        <span class="credly-badge__arrow">↗</span>
+                        <img src="https://images.credly.com/images/fb16b17f-ff4d-499e-a9f6-ddb620989415/image.png" alt="UX/UI Designer Sobresaliente" class="credly-badge__img" loading="lazy">
+                        <span class="credly-badge__name">UX/UI Designer Sobresaliente</span>
+                        <span class="credly-badge__issuer">UDD · 2024</span>
+                    </a>
+
+                    <a class="credly-badge" href="https://www.credly.com/badges/f0ca5477-683d-4c8d-874b-5dd1f882d7ab/public_url" target="_blank" rel="noopener">
+                        <span class="credly-badge__arrow">↗</span>
+                        <img src="https://images.credly.com/images/24f3a3f4-2460-4341-b31c-59be42644232/image.png" alt="DT Evolution Sobresaliente" class="credly-badge__img" loading="lazy">
+                        <span class="credly-badge__name">DT: Evolution Sobresaliente</span>
+                        <span class="credly-badge__issuer">UDD · 2024</span>
+                    </a>
+
+                    <a class="credly-badge" href="https://www.credly.com/badges/aa852ab3-cd93-4922-a5ca-a1734e26103a/public_url" target="_blank" rel="noopener">
+                        <span class="credly-badge__arrow">↗</span>
+                        <img src="https://images.credly.com/images/579237d3-2a35-4ba3-80fe-32432b39ebc5/image.png" alt="DT Evaluation Sobresaliente" class="credly-badge__img" loading="lazy">
+                        <span class="credly-badge__name">DT: Evaluation Sobresaliente</span>
+                        <span class="credly-badge__issuer">UDD · 2024</span>
+                    </a>
+
+                    <a class="credly-badge" href="https://www.credly.com/badges/5d4ee623-4d57-44ae-8844-051788a14ec7/public_url" target="_blank" rel="noopener">
+                        <span class="credly-badge__arrow">↗</span>
+                        <img src="https://images.credly.com/images/aed8be82-d84a-4906-a45c-331d90366382/image.png" alt="DT Prototyping Sobresaliente" class="credly-badge__img" loading="lazy">
+                        <span class="credly-badge__name">DT: Prototyping Sobresaliente</span>
+                        <span class="credly-badge__issuer">UDD · 2024</span>
+                    </a>
+
+                    <a class="credly-badge" href="https://www.credly.com/badges/a62b08ed-5121-4adb-8299-7fe1f6b41e81/public_url" target="_blank" rel="noopener">
+                        <span class="credly-badge__arrow">↗</span>
+                        <img src="https://images.credly.com/images/b4b4ebd4-8935-4099-9dd4-c893fc9cd7c8/image.png" alt="DT Creativity Sobresaliente" class="credly-badge__img" loading="lazy">
+                        <span class="credly-badge__name">DT: Creativity Sobresaliente</span>
+                        <span class="credly-badge__issuer">UDD · 2023</span>
+                    </a>
+
+                    <a class="credly-badge" href="https://www.credly.com/badges/56be8264-7e69-4d56-83a6-aca84c9b4a7e/public_url" target="_blank" rel="noopener">
+                        <span class="credly-badge__arrow">↗</span>
+                        <img src="https://images.credly.com/images/d332f7e2-5709-40d5-974c-3a9903729e6b/image.png" alt="DT Solution Definition Sobresaliente" class="credly-badge__img" loading="lazy">
+                        <span class="credly-badge__name">DT: Solution Definition</span>
+                        <span class="credly-badge__issuer">UDD · 2023</span>
+                    </a>
+
+                    <a class="credly-badge" href="https://acreditta.com/credential/122a05d9-c122-4c4f-af32-93916e08aa44" target="_blank" rel="noopener">
+                        <span class="credly-badge__arrow">↗</span>
+                        <img src="https://images.credly.com/images/fb16b17f-ff4d-499e-a9f6-ddb620989415/image.png" alt="Diseñador UX/UI Trainee — Talento Digital" class="credly-badge__img" loading="lazy">
+                        <span class="credly-badge__name">Diseñador UX/UI Trainee (388 hrs)</span>
+                        <span class="credly-badge__issuer">Talento Digital · 2024</span>
+                    </a>
+                </div>
+                <a href="https://www.credly.com/users/patricio-bustamante-eguia/badges" target="_blank" rel="noopener" class="credly-section__link">Ver todas las credenciales en Credly ↗</a>
+            </div>
+        </section>
+
+        <!-- ====== TREND HUNTER (Weekly Pulse) ====== -->
+        <section class="weekly-pulse reveal" id="trend-hunter" aria-labelledby="weekly-pulse-titulo">
+            <div class="section-heading">
+                <span class="section-heading__badge">Actualidad &amp; Tendencias</span>
+                <h2 class="section-heading__title" id="weekly-pulse-titulo">Weekly Pulse</h2>
+                <p class="section-heading__subtitle">Selección automatizada semanal con las innovaciones más relevantes en diseño de interacción e IA.</p>
+            </div>
+            <div class="projects__grid" id="newsGrid">
+                <!-- Tarjetas inyectadas por JS -->
+            </div>
+        </section>
+
+        <!-- ====== CONTACTO ====== -->
+        <section class="contact-section flat-section reveal" id="contacto" aria-labelledby="contacto-titulo">
+            <div class="contact-form">
+                <span class="section-badge">Hablemos de tu Proyecto</span>
+                <h2 class="contact-form__title" id="contacto-titulo">Iniciar Conversación</h2>
+                <p class="contact-form__description">¿Buscas potenciar la experiencia de usuario de tu producto o requieres consultoría estratégica? Cuéntame sobre tus objetivos.</p>
+                <form class="contact-form__form" id="contactForm" novalidate>
+                    <div class="contact-form__group">
+                        <label for="name" class="contact-form__label">Nombre completo</label>
+                        <input type="text" id="name" name="name" placeholder="Ej. Camila Morales" required
+                            class="contact-form__input" autocomplete="name">
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="email" class="contact-form__label">Correo corporativo / personal</label>
+                        <input type="email" id="email" name="email" placeholder="camila@empresa.com" required
+                            class="contact-form__input" autocomplete="email">
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="message" class="contact-form__label">Detalles del proyecto o desafío</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Describe brevemente el producto, metas de negocio o fecha estimada..." required
+                            class="contact-form__textarea"></textarea>
+                    </div>
+                    <button type="submit" class="contact-form__btn" id="submitBtn">Enviar Mensaje</button>
+                    <div class="contact-form__feedback" id="formFeedback" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ====== MODAL DE IMAGEN ====== -->
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Imagen ampliada de caso de estudio">
+        <button class="modal__close" id="modalClose" aria-label="Cerrar modal">&times;</button>
+        <img class="modal-content" id="modalImg" alt="">
+        <p class="modal__caption" id="modalCaption"></p>
+    </div>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <p class="footer__text">&copy; 2026 Patricio Bustamante Eguía &mdash; AI Product Designer &amp; UX/UI Specialist.</p>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
