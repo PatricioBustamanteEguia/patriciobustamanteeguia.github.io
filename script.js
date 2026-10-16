@@ -55,9 +55,11 @@ const EMAILJS_PUBLIC_KEY  = 'J1_wfPu9sLCyfnMvw';
 const EMAILJS_SERVICE_ID  = 'service_08tvtaj';
 const EMAILJS_TEMPLATE_ID = 'template_uz7bef9';
 
-// Inicialización de EmailJS
+// Inicialización de EmailJS (a prueba de ad-blockers)
 (function () {
-    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
 })();
 
 const contactForm = document.getElementById('contactForm');
@@ -119,89 +121,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-// ===== SISTEMA DE PARTÍCULAS (Red Neuronal) =====
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-let particles = [];
-let mouse = { x: null, y: null, radius: 150 };
-
-window.addEventListener('resize', init);
-window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
-window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
-
-class Particle {
-    constructor() { this.reset(); }
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.dx = (Math.random() - 0.5) * 0.5;
-        this.dy = (Math.random() - 0.5) * 0.5;
-        this.size = Math.random() * 2 + 4; /* Radio entre 4px y 6px */
-    }
-    update() {
-        if (this.x > canvas.width || this.x < 0) this.dx *= -1;
-        if (this.y > canvas.height || this.y < 0) this.dy *= -1;
-        this.x += this.dx;
-        this.y += this.dy;
-
-        if (mouse.x !== null) {
-            let dist = Math.hypot(this.x - mouse.x, this.y - mouse.y);
-            if (dist < mouse.radius) {
-                if (mouse.x < this.x && this.x < canvas.width - 10) this.x += 2;
-                if (mouse.x > this.x && this.x > 10) this.x -= 2;
-                if (mouse.y < this.y && this.y < canvas.height - 10) this.y += 2;
-                if (mouse.y > this.y && this.y > 10) this.y -= 2;
-            }
-        }
-        this.draw();
-    }
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(176, 196, 222, 0.2)'; /* Núcleo sutil con baja opacidad */
-        ctx.fill();
-    }
-}
-
-function init() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    particles = [];
-    // Sentinel Skill: Densidad aumentada un 20% para mayor impacto visual
-    const count = window.innerWidth < 768
-        ? Math.floor((canvas.width * canvas.height) / 25000)
-        : Math.floor((canvas.width * canvas.height) / 16000); 
-    for (let i = 0; i < count; i++) particles.push(new Particle());
-}
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => p.update());
-    connect();
-    requestAnimationFrame(animate);
-}
-
-function connect() {
-    for (let a = 0; a < particles.length; a++) {
-        for (let b = a + 1; b < particles.length; b++) {
-            let dist = Math.hypot(particles[a].x - particles[b].x, particles[a].y - particles[b].y);
-            if (dist < 280) { /* Umbral aumentado a 280px */
-                const opacity = 1 - (dist / 280);
-                const lineWidth = 0.8 + (1 - dist / 280) * 0.4; /* Grosor variable entre 0.8px y 1.2px */
-                
-                ctx.strokeStyle = `rgba(176, 196, 222, ${opacity * 0.5})`; /* Opacidad dependiente de la distancia */
-                ctx.lineWidth = lineWidth;
-                ctx.beginPath();
-                ctx.moveTo(particles[a].x, particles[a].y);
-                ctx.lineTo(particles[b].x, particles[b].y);
-                ctx.stroke();
-            }
-        }
-    }
-}
-
-init();
-animate();
 
 // ===== TREND HUNTER SKILL (Curated News Radar) =====
 const newsGrid = document.getElementById('newsGrid');
@@ -214,49 +133,52 @@ function fetchWeeklyPulse() {
             source: { name: "UX Psychology Weekly" },
             url: "https://uxdesign.cc/",
             description: "Cómo entender la estructura del pensamiento humano nos permite diseñar interfaces que se sienten naturales e intuitivas.",
-            urlToImage: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=400&q=80"
+            urlToImage: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&h=360&q=80"
         },
         {
             title: "Carga Cognitiva: El enemigo silencioso de la Usabilidad",
             source: { name: "HCI Labs" },
             url: "https://lawsofux.com/hicks-law/",
             description: "Estrategias basadas en la psicología para simplificar la toma de decisiones y mejorar la retención del usuario.",
-            urlToImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80"
+            urlToImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&h=360&q=80"
         },
         {
             title: "Psicología del Usuario: El puente entre mente y tecnología",
             source: { name: "Behavioral UX" },
             url: "https://www.nngroup.com/articles/",
             description: "Análisis de cómo el trasfondo en ciencias del comportamiento transforma radicalmente la arquitectura de información.",
-            urlToImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80"
+            urlToImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&h=360&q=80"
         }
     ];
 
-    if (newsGrid) {
-        newsGrid.innerHTML = '';
+    if (newsGrid && newsGrid.children.length === 0) {
         curatedNews.forEach((news, idx) => {
             const delay = idx * 0.1;
             const imgSrc = news.urlToImage;
             const cardHtml = `
-            <div class="news-card reveal reveal--visible" style="transition-delay: ${delay}s">
+            <article class="news-card reveal reveal--visible" style="transition-delay: ${delay}s">
                 <div class="news-card__image-wrapper">
-                    <img src="${imgSrc}" alt="${news.title}" class="news-card__image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <img src="${imgSrc}" alt="${news.title}" class="news-card__image" loading="lazy" width="600" height="360" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="news-card__placeholder" style="display:none;">📰 Sin Imagen</div>
                 </div>
                 <div class="news-card__content">
                     <span class="news-card__source">${news.source.name}</span>
                     <h3 class="news-card__title">${news.title}</h3>
                     <p class="news-card__summary">${news.description}</p>
-                    <a href="${news.url}" target="_blank" class="news-card__btn">Leer Artículo ↗</a>
+                    <a href="${news.url}" target="_blank" rel="noopener noreferrer" class="news-card__btn">Leer Artículo ↗</a>
                 </div>
-            </div>`;
+            </article>`;
             newsGrid.innerHTML += cardHtml;
         });
     }
 }
 
 // Inicialización de Skills
-window.addEventListener('load', fetchWeeklyPulse);
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fetchWeeklyPulse);
+} else {
+    fetchWeeklyPulse();
+}
 
 // ===== SEGURIDAD Y PROTECCIÓN DE CONTENIDO =====
 
