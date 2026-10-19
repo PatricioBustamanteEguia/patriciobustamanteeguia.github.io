@@ -187,6 +187,8 @@ img {
     list-style: none;
     gap: 2rem;
     align-items: center;
+    margin-left: auto;
+    margin-right: 1.5rem;
 }
 
 .header-nav__link {
@@ -250,6 +252,62 @@ img {
 
 .header-nav__hamburger--open .header-nav__hamburger-bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   HEADER ACTIONS & LANGUAGE TOGGLE
+   ========================================================================== */
+.header-nav__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.65rem;
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-pill);
+    color: var(--text-heading);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    line-height: 1;
+}
+
+.lang-toggle:hover {
+    background-color: var(--surface-muted);
+    border-color: var(--border-strong);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+.lang-toggle:active {
+    transform: translateY(0);
+}
+
+.lang-toggle:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+.lang-toggle__icon {
+    width: 13px;
+    height: 13px;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.lang-toggle__text {
+    font-weight: 700;
+    letter-spacing: 0.06em;
 }
 
 /* ==========================================================================
@@ -1499,6 +1557,7 @@ section {
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
         transition: right var(--transition-base);
         z-index: 105;
+        margin: 0;
     }
 
     .header-nav__list--open {
