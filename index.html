@@ -77,43 +77,53 @@
     <nav class="header-nav" id="header-nav" aria-label="Navegación principal">
         <a href="#inicio" class="header-nav__logo" aria-label="Ir al inicio de Patricio Bustamante">PBE</a>
         <ul class="header-nav__list" id="navList">
-            <li class="header-nav__item"><a href="#inicio" class="header-nav__link">Inicio</a></li>
-            <li class="header-nav__item"><a href="#sobre-mi" class="header-nav__link">Sobre Mí</a></li>
-            <li class="header-nav__item"><a href="#experiencia" class="header-nav__link">Experiencia</a></li>
-            <li class="header-nav__item"><a href="#habilidades" class="header-nav__link">Habilidades</a></li>
-            <li class="header-nav__item"><a href="#proyectos" class="header-nav__link">Casos de Estudio</a></li>
-            <li class="header-nav__item"><a href="#certificaciones" class="header-nav__link">Certificaciones</a></li>
-            <li class="header-nav__item"><a href="#contacto" class="header-nav__link">Contacto</a></li>
+            <li class="header-nav__item"><a href="#inicio" class="header-nav__link" data-i18n="nav.home">Inicio</a></li>
+            <li class="header-nav__item"><a href="#sobre-mi" class="header-nav__link" data-i18n="nav.about">Sobre Mí</a></li>
+            <li class="header-nav__item"><a href="#experiencia" class="header-nav__link" data-i18n="nav.experience">Experiencia</a></li>
+            <li class="header-nav__item"><a href="#habilidades" class="header-nav__link" data-i18n="nav.skills">Habilidades</a></li>
+            <li class="header-nav__item"><a href="#proyectos" class="header-nav__link" data-i18n="nav.projects">Casos de Estudio</a></li>
+            <li class="header-nav__item"><a href="#certificaciones" class="header-nav__link" data-i18n="nav.certifications">Certificaciones</a></li>
+            <li class="header-nav__item"><a href="#contacto" class="header-nav__link" data-i18n="nav.contact">Contacto</a></li>
         </ul>
-        <button class="header-nav__hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navList">
-            <span class="header-nav__hamburger-bar"></span>
-            <span class="header-nav__hamburger-bar"></span>
-            <span class="header-nav__hamburger-bar"></span>
-        </button>
+        <div class="header-nav__actions">
+            <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma a inglés" title="Switch language to English" type="button">
+                <svg class="lang-toggle__icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span id="langToggleText" class="lang-toggle__text">EN</span>
+            </button>
+            <button class="header-nav__hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navList">
+                <span class="header-nav__hamburger-bar"></span>
+                <span class="header-nav__hamburger-bar"></span>
+                <span class="header-nav__hamburger-bar"></span>
+            </button>
+        </div>
     </nav>
 
     <!-- ====== HERO ====== -->
     <header class="hero" id="inicio">
         <div class="hero__content hero__content--animated">
             <!-- Badge superior de disponibilidad -->
-            <div class="hero__badge hero__anim hero__anim--1" role="status" aria-label="Estado: Disponible para nuevos proyectos o consultoría">
+            <div class="hero__badge hero__anim hero__anim--1" role="status" aria-label="Estado: Disponible para nuevos proyectos o consultoría" data-i18n-aria="hero.badge_aria">
                 <span class="hero__badge-dot" aria-hidden="true"></span>
-                <span class="hero__badge-text">Disponible para nuevos proyectos / Consultoría</span>
+                <span class="hero__badge-text" data-i18n="hero.badge">Disponible para nuevos proyectos / Consultoría</span>
             </div>
 
             <h1 class="hero__title hero__anim hero__anim--2">Patricio Bustamante Eguía</h1>
-            <h2 class="hero__role hero__anim hero__anim--3">AI Product Designer &amp; UX/UI Specialist</h2>
-            <p class="hero__description hero__anim hero__anim--4">
+            <h2 class="hero__role hero__anim hero__anim--3" data-i18n="hero.role">AI Product Designer &amp; UX/UI Specialist</h2>
+            <p class="hero__description hero__anim hero__anim--4" data-i18n="hero.desc">
                 Diseño productos digitales interactivos e interfaces inteligentes, conectando metodologías centradas en las personas con capacidades de IA generativa para dar vida a nuevas ideas.
             </p>
 
             <!-- Acciones CTA -->
             <div class="hero__cta-container hero__anim hero__anim--5">
                 <a href="#proyectos" class="hero__btn hero__btn--primary" id="cta-casos-estudio">
-                    <span>Ver Casos de Estudio ↓</span>
+                    <span data-i18n="hero.cta_projects">Ver Casos de Estudio ↓</span>
                 </a>
-                <a href="documentos/cv-patricio-bustamante.pdf" target="_blank" rel="noopener" class="hero__btn hero__btn--secondary" id="cta-cv" aria-label="Ver CV en PDF (abre en nueva pestaña)">
-                    <span>Ver CV en PDF ↗</span>
+                <a href="documentos/cv-patricio-bustamante.pdf" target="_blank" rel="noopener" class="hero__btn hero__btn--secondary" id="cta-cv" aria-label="Ver CV en PDF (abre en nueva pestaña)" data-i18n-aria="hero.cta_cv_aria">
+                    <span data-i18n="hero.cta_cv">Ver CV en PDF ↗</span>
                 </a>
             </div>
 
@@ -142,9 +152,9 @@
         <section class="about-me flat-section reveal" id="sobre-mi">
             <div class="about-me__body">
                 <div class="about-me__text">
-                    <span class="section-badge">Perfil Profesional</span>
-                    <h2 class="about-me__title">Sobre Mí</h2>
-                    <p class="about-me__description">Diseñador UX/UI enfocado en conceptualizar y construir productos tecnológicos desde la idea hasta el prototipo funcional. Con base en psicología y diseño multimedia, integro investigación de usuarios, arquitectura de información y herramientas de IA generativa para resolver problemas reales mediante interfaces claras, humanas e intuitivas.</p>
+                    <span class="section-badge" data-i18n="about.badge">Perfil Profesional</span>
+                    <h2 class="about-me__title" data-i18n="about.title">Sobre Mí</h2>
+                    <p class="about-me__description" data-i18n="about.desc">Diseñador UX/UI enfocado en conceptualizar y construir productos tecnológicos desde la idea hasta el prototipo funcional. Con base en psicología y diseño multimedia, integro investigación de usuarios, arquitectura de información y herramientas de IA generativa para resolver problemas reales mediante interfaces claras, humanas e intuitivas.</p>
                 </div>
                 <div class="about-me__photo-wrapper">
                     <img src="assets/patricio-bustamante.jpg" alt="Patricio Bustamante — AI Product Designer &amp; UX/UI Specialist"
@@ -156,9 +166,9 @@
         <!-- ====== COMPONENTE 2: EXPERIENCIA ====== -->
         <section class="experience reveal" id="experiencia" aria-labelledby="experiencia-titulo">
             <div class="section-heading">
-                <span class="section-heading__badge">Trayectoria Profesional</span>
-                <h2 class="section-heading__title" id="experiencia-titulo">Experiencia</h2>
-                <p class="section-heading__subtitle">Diseño de producto e interfaces en organizaciones que construyen desde cero.</p>
+                <span class="section-heading__badge" data-i18n="exp.badge">Trayectoria Profesional</span>
+                <h2 class="section-heading__title" id="experiencia-titulo" data-i18n="exp.title">Experiencia</h2>
+                <p class="section-heading__subtitle" data-i18n="exp.subtitle">Diseño de producto e interfaces en organizaciones que construyen desde cero.</p>
             </div>
 
             <div class="experience__grid">
@@ -167,19 +177,19 @@
                     <header class="experience-card__header">
                         <div class="experience-card__role-meta">
                             <span class="experience-card__company">8Brains</span>
-                            <h3 class="experience-card__role">AI Product Designer</h3>
+                            <h3 class="experience-card__role" data-i18n="exp.r1_role">AI Product Designer</h3>
                         </div>
-                        <time class="experience-card__period">2024 — Presente</time>
+                        <time class="experience-card__period" data-i18n="exp.present">2024 — Presente</time>
                     </header>
                     <ul class="experience-card__metrics">
                         <li class="metric-item">
-                            <span class="metric-desc">Diseño de producto y arquitectura de interacción para plataforma de automatización de diseño.</span>
+                            <span class="metric-desc" data-i18n="exp.r1_b1">Diseño de producto y arquitectura de interacción para plataforma de automatización de diseño.</span>
                         </li>
                         <li class="metric-item">
-                            <span class="metric-desc">Conceptualización de flujos con agentes secuenciales y componentes de supervisión <em>Human-in-the-Loop</em> (HITL).</span>
+                            <span class="metric-desc" data-i18n-html="exp.r1_b2">Conceptualización de flujos con agentes secuenciales y componentes de supervisión <em>Human-in-the-Loop</em> (HITL).</span>
                         </li>
                         <li class="metric-item">
-                            <span class="metric-desc">Prototipado interactivo de alta fidelidad para validación funcional.</span>
+                            <span class="metric-desc" data-i18n="exp.r1_b3">Prototipado interactivo de alta fidelidad para validación funcional.</span>
                         </li>
                     </ul>
                 </article>
@@ -189,19 +199,19 @@
                     <header class="experience-card__header">
                         <div class="experience-card__role-meta">
                             <span class="experience-card__company">GuauMatch.cl</span>
-                            <h3 class="experience-card__role">Product UX Architect</h3>
+                            <h3 class="experience-card__role" data-i18n="exp.r2_role">Product UX Architect</h3>
                         </div>
-                        <time class="experience-card__period">2024 — Presente</time>
+                        <time class="experience-card__period" data-i18n="exp.present">2024 — Presente</time>
                     </header>
                     <ul class="experience-card__metrics">
                         <li class="metric-item">
-                            <span class="metric-desc">Diseño integral de experiencia Mobile-First y arquitectura de flujos de onboarding y match.</span>
+                            <span class="metric-desc" data-i18n="exp.r2_b1">Diseño integral de experiencia Mobile-First y arquitectura de flujos de onboarding y match.</span>
                         </li>
                         <li class="metric-item">
-                            <span class="metric-desc">Integración de normativas de tenencia responsable (Ley 21.020) en el journey del usuario.</span>
+                            <span class="metric-desc" data-i18n="exp.r2_b2">Integración de normativas de tenencia responsable (Ley 21.020) en el journey del usuario.</span>
                         </li>
                         <li class="metric-item">
-                            <span class="metric-desc">Exploración e integración de modelos de asistencia de IA mediante Google AI Studio.</span>
+                            <span class="metric-desc" data-i18n="exp.r2_b3">Exploración e integración de modelos de asistencia de IA mediante Google AI Studio.</span>
                         </li>
                     </ul>
                 </article>
@@ -211,19 +221,19 @@
                     <header class="experience-card__header">
                         <div class="experience-card__role-meta">
                             <span class="experience-card__company">Bitzcode</span>
-                            <h3 class="experience-card__role">Diseñador UX/UI &amp; Product Specialist</h3>
+                            <h3 class="experience-card__role" data-i18n="exp.r3_role">Diseñador UX/UI &amp; Product Specialist</h3>
                         </div>
                         <time class="experience-card__period">2017 — 2021</time>
                     </header>
                     <ul class="experience-card__metrics">
                         <li class="metric-item">
-                            <span class="metric-desc">Liderazgo de diseño en múltiples proyectos de software y plataformas web bajo metodología Scrum.</span>
+                            <span class="metric-desc" data-i18n="exp.r3_b1">Liderazgo de diseño en múltiples proyectos de software y plataformas web bajo metodología Scrum.</span>
                         </li>
                         <li class="metric-item">
-                            <span class="metric-desc">Creación y mantenimiento de sistemas de diseño en Figma para acelerar el handoff a ingeniería.</span>
+                            <span class="metric-desc" data-i18n="exp.r3_b2">Creación y mantenimiento de sistemas de diseño en Figma para acelerar el handoff a ingeniería.</span>
                         </li>
                         <li class="metric-item">
-                            <span class="metric-desc">Discovery de usuarios, wireframing y prototipado interactivo de flujos complejos.</span>
+                            <span class="metric-desc" data-i18n="exp.r3_b3">Discovery de usuarios, wireframing y prototipado interactivo de flujos complejos.</span>
                         </li>
                     </ul>
                 </article>
@@ -234,33 +244,33 @@
         <!-- ====== HABILIDADES ====== -->
         <section class="skills reveal" id="habilidades" aria-labelledby="habilidades-titulo">
             <div class="section-heading">
-                <span class="section-heading__badge">Capacidades Clave</span>
-                <h2 class="section-heading__title" id="habilidades-titulo">Áreas de Expertise</h2>
-                <p class="section-heading__subtitle">Metodologías, herramientas y estándares para crear productos digitales centrados en las personas.</p>
+                <span class="section-heading__badge" data-i18n="skills.badge">Capacidades Clave</span>
+                <h2 class="section-heading__title" id="habilidades-titulo" data-i18n="skills.title">Áreas de Expertise</h2>
+                <p class="section-heading__subtitle" data-i18n="skills.subtitle">Metodologías, herramientas y estándares para crear productos digitales centrados en las personas.</p>
             </div>
             <div class="skills__grid">
                 <div class="skill-card">
-                    <h3 class="skill-card__title">UX/UI Design &amp; Product Creation</h3>
+                    <h3 class="skill-card__title" data-i18n="skills.c1_title">UX/UI Design &amp; Product Creation</h3>
                     <ul class="skill-card__list">
-                        <li>Diseño Centrado en el Usuario (UCD) &amp; Design Thinking</li>
-                        <li>Sistemas de diseño escalables y componentes reutilizables en Figma (Auto Layout)</li>
-                        <li>Arquitectura de información, wireframes y flujos de usuario complejos</li>
+                        <li data-i18n="skills.c1_b1">Diseño Centrado en el Usuario (UCD) &amp; Design Thinking</li>
+                        <li data-i18n="skills.c1_b2">Sistemas de diseño escalables y componentes reutilizables en Figma (Auto Layout)</li>
+                        <li data-i18n="skills.c1_b3">Arquitectura de información, wireframes y flujos de usuario complejos</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3 class="skill-card__title">Ecosistema Google AI &amp; Prototipado</h3>
+                    <h3 class="skill-card__title" data-i18n="skills.c2_title">Ecosistema Google AI &amp; Prototipado</h3>
                     <ul class="skill-card__list">
-                        <li>Orquestación de modelos con Google AI Studio, Gemini y Gemini Notebook</li>
-                        <li>Experimentación y prototipado rápido con Stitch y Antigravity</li>
-                        <li>Diseño de flujos interactivos Human-in-the-Loop (HITL)</li>
+                        <li data-i18n="skills.c2_b1">Orquestación de modelos con Google AI Studio, Gemini y Gemini Notebook</li>
+                        <li data-i18n="skills.c2_b2">Experimentación y prototipado rápido con Stitch y Antigravity</li>
+                        <li data-i18n="skills.c2_b3">Diseño de flujos interactivos Human-in-the-Loop (HITL)</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3 class="skill-card__title">Accesibilidad, Normativas &amp; Hand-off</h3>
+                    <h3 class="skill-card__title" data-i18n="skills.c3_title">Accesibilidad, Normativas &amp; Hand-off</h3>
                     <ul class="skill-card__list">
-                        <li>Accesibilidad digital (WCAG 2.1 AA) y diseño inclusivo</li>
-                        <li>Mapeo de reglas de negocio, validaciones regulatorias y casos de borde</li>
-                        <li>Comprensión técnica (HTML/CSS) para comunicación fluida con desarrollo</li>
+                        <li data-i18n="skills.c3_b1">Accesibilidad digital (WCAG 2.1 AA) y diseño inclusivo</li>
+                        <li data-i18n="skills.c3_b2">Mapeo de reglas de negocio, validaciones regulatorias y casos de borde</li>
+                        <li data-i18n="skills.c3_b3">Comprensión técnica (HTML/CSS) para comunicación fluida con desarrollo</li>
                     </ul>
                 </div>
             </div>
@@ -269,9 +279,9 @@
         <!-- ====== CASOS DE ESTUDIO ====== -->
         <section class="projects reveal" id="proyectos" aria-labelledby="proyectos-titulo">
             <div class="section-heading">
-                <span class="section-heading__badge">Portafolio Seleccionado</span>
-                <h2 class="section-heading__title" id="proyectos-titulo">Casos de Estudio</h2>
-                <p class="section-heading__subtitle">Soluciones de diseño aplicadas a retos de negocio reales y validación con usuarios.</p>
+                <span class="section-heading__badge" data-i18n="projects.badge">Portafolio Seleccionado</span>
+                <h2 class="section-heading__title" id="proyectos-titulo" data-i18n="projects.title">Casos de Estudio</h2>
+                <p class="section-heading__subtitle" data-i18n="projects.subtitle">Soluciones de diseño aplicadas a retos de negocio reales y validación con usuarios.</p>
             </div>
             <div class="projects__grid">
                 <!-- Tech Future -->
@@ -286,16 +296,16 @@
                         </div>
                     </div>
                     <div class="project-card__content">
-                        <span class="project-card__bootcamp">Investigación UX</span>
-                        <h3 class="project-card__title">Tech Future</h3>
-                        <p class="project-card__description">Caso de estudio sobre ecosistemas digitales e innovación estratégica impulsada por IA.</p>
+                        <span class="project-card__bootcamp" data-i18n="projects.p1_tag">Investigación UX</span>
+                        <h3 class="project-card__title" data-i18n="projects.p1_title">Tech Future</h3>
+                        <p class="project-card__description" data-i18n="projects.p1_desc">Caso de estudio sobre ecosistemas digitales e innovación estratégica impulsada por IA.</p>
                         <div class="project-card__tags">
                             <span class="project-card__tag">UX Strategy</span>
                             <span class="project-card__tag">Product Design</span>
                             <span class="project-card__tag">Gen AI</span>
                         </div>
                         <a href="documentos/TechFuture.pdf" target="_blank" rel="noopener"
-                            class="project-card__btn project-card__btn--primary">Ver Caso PDF ↗</a>
+                            class="project-card__btn project-card__btn--primary" data-i18n="projects.view_btn">Ver Caso PDF ↗</a>
                     </div>
                 </div>
 
@@ -313,14 +323,14 @@
                     <div class="project-card__content">
                         <span class="project-card__bootcamp">U. del Desarrollo</span>
                         <h3 class="project-card__title">DressUp</h3>
-                        <p class="project-card__description">E-commerce de moda sostenible enfocado en optimizar el journey del comprador y reducir fricción.</p>
+                        <p class="project-card__description" data-i18n="projects.p2_desc">E-commerce de moda sostenible enfocado en optimizar el journey del comprador y reducir fricción.</p>
                         <div class="project-card__tags">
                             <span class="project-card__tag">UX Research</span>
                             <span class="project-card__tag">Figma</span>
                             <span class="project-card__tag">E-commerce</span>
                         </div>
                         <a href="documentos/caso-dressup.pdf" target="_blank" rel="noopener"
-                            class="project-card__btn project-card__btn--primary">Ver Caso PDF ↗</a>
+                            class="project-card__btn project-card__btn--primary" data-i18n="projects.view_btn">Ver Caso PDF ↗</a>
                     </div>
                 </div>
 
@@ -338,14 +348,14 @@
                     <div class="project-card__content">
                         <span class="project-card__bootcamp">Talento Digital</span>
                         <h3 class="project-card__title">Coyote Bags</h3>
-                        <p class="project-card__description">Optimización del checkout y rediseño visual para incrementar tasa de conversión en marca urbana.</p>
+                        <p class="project-card__description" data-i18n="projects.p3_desc">Optimización del checkout y rediseño visual para incrementar tasa de conversión en marca urbana.</p>
                         <div class="project-card__tags">
                             <span class="project-card__tag">UI Design</span>
                             <span class="project-card__tag">Checkout</span>
                             <span class="project-card__tag">Branding</span>
                         </div>
                         <a href="documentos/CoyoteBags.pdf" target="_blank" rel="noopener"
-                            class="project-card__btn project-card__btn--primary">Ver Caso PDF ↗</a>
+                            class="project-card__btn project-card__btn--primary" data-i18n="projects.view_btn">Ver Caso PDF ↗</a>
                     </div>
                 </div>
 
@@ -364,14 +374,14 @@
                     <div class="project-card__content">
                         <span class="project-card__bootcamp">Talento Digital</span>
                         <h3 class="project-card__title">Sr. Compost</h3>
-                        <p class="project-card__description">Plataforma interactiva para la trazabilidad y gestión comunitaria de residuos orgánicos.</p>
+                        <p class="project-card__description" data-i18n="projects.p4_desc">Plataforma interactiva para la trazabilidad y gestión comunitaria de residuos orgánicos.</p>
                         <div class="project-card__tags">
                             <span class="project-card__tag">App Design</span>
-                            <span class="project-card__tag">Sostenibilidad</span>
+                            <span class="project-card__tag" data-i18n="projects.p4_badge_sustain">Sostenibilidad</span>
                             <span class="project-card__tag">UX</span>
                         </div>
                         <a href="documentos/Sr_Compost.pdf" target="_blank" rel="noopener"
-                            class="project-card__btn project-card__btn--primary">Ver Caso PDF ↗</a>
+                            class="project-card__btn project-card__btn--primary" data-i18n="projects.view_btn">Ver Caso PDF ↗</a>
                     </div>
                 </div>
             </div>
@@ -380,9 +390,9 @@
         <!-- ====== COMPONENTE 3: GRID DE CERTIFICACIONES ====== -->
         <section class="certifications reveal" id="certificaciones" aria-labelledby="certificaciones-titulo">
             <div class="section-heading">
-                <span class="section-heading__badge">Acreditaciones &amp; Estándares</span>
-                <h2 class="section-heading__title" id="certificaciones-titulo">Certificaciones y Diplomas</h2>
-                <p class="section-heading__subtitle">Validación académica continua en Diseño de Producto, Gestión Ágil e Inteligencia Artificial.</p>
+                <span class="section-heading__badge" data-i18n="certs.badge">Acreditaciones &amp; Estándares</span>
+                <h2 class="section-heading__title" id="certificaciones-titulo" data-i18n="certs.title">Certificaciones y Diplomas</h2>
+                <p class="section-heading__subtitle" data-i18n="certs.subtitle">Validación académica continua en Diseño de Producto, Gestión Ágil e Inteligencia Artificial.</p>
             </div>
 
             <div class="certifications__grid" role="list">
@@ -392,20 +402,20 @@
                         <span class="cert-card__category">Bootcamp UX/UI</span>
                         <span class="cert-card__verified" title="Certificado verificado">
                             <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Verificado
+                            <span data-i18n="certs.verified">Verificado</span>
                         </span>
                     </div>
                     <div class="cert-card__body">
-                        <h3 class="cert-card__title">Diplomado UX/UI Designer</h3>
+                        <h3 class="cert-card__title" data-i18n="certs.c1_title">Diplomado UX/UI Designer</h3>
                         <p class="cert-card__institution">Universidad del Desarrollo (UDD) · 2024</p>
                     </div>
                     <div class="cert-card__footer">
                         <a href="assets/certificaciones/diploma-udd.pdf" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver Diploma UDD en PDF">
-                            <span>Ver Diploma</span>
+                            <span data-i18n="certs.btn_diploma">Ver Diploma</span>
                             <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         </a>
                     </div>
-                    <div id="tooltip-udd" role="tooltip" class="cert-card__tooltip">
+                    <div id="tooltip-udd" role="tooltip" class="cert-card__tooltip" data-i18n="certs.c1_tooltip">
                         Especialización de 400+ hrs en User Research, Arquitectura de Información, Prototipado Avanzado y Handoff técnico.
                     </div>
                 </div>
@@ -416,20 +426,20 @@
                         <span class="cert-card__category">Bootcamp UX/UI</span>
                         <span class="cert-card__verified" title="Credencial digital verificada">
                             <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Acreditada
+                            <span data-i18n="certs.accredited">Acreditada</span>
                         </span>
                     </div>
                     <div class="cert-card__body">
-                        <h3 class="cert-card__title">Diseñador UX/UI Certificado</h3>
+                        <h3 class="cert-card__title" data-i18n="certs.c2_title">Diseñador UX/UI Certificado</h3>
                         <p class="cert-card__institution">Talento Digital para Chile · 2024</p>
                     </div>
                     <div class="cert-card__footer">
                         <a href="https://acreditta.com/credential/122a05d9-c122-4c4f-af32-93916e08aa44" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver credencial digital en Acreditta">
-                            <span>Ver Credencial</span>
+                            <span data-i18n="certs.btn_credential">Ver Credencial</span>
                             <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         </a>
                     </div>
-                    <div id="tooltip-td" role="tooltip" class="cert-card__tooltip">
+                    <div id="tooltip-td" role="tooltip" class="cert-card__tooltip" data-i18n="certs.c2_tooltip">
                         Insignia oficial validada por SENCE en diseño ágil, evaluación heurística y testeos de usabilidad empíricos.
                     </div>
                 </div>
@@ -440,20 +450,20 @@
                         <span class="cert-card__category">Gestión de Proyectos</span>
                         <span class="cert-card__verified" title="Certificado oficial">
                             <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Verificado
+                            <span data-i18n="certs.verified">Verificado</span>
                         </span>
                     </div>
                     <div class="cert-card__body">
-                        <h3 class="cert-card__title">Diplomado Diseño y Gestión Ágil</h3>
+                        <h3 class="cert-card__title" data-i18n="certs.c3_title">Diplomado Diseño y Gestión Ágil</h3>
                         <p class="cert-card__institution">Diplomado Profesional · 2023</p>
                     </div>
                     <div class="cert-card__footer">
                         <a href="assets/certificaciones/diplomado-gestion-agil.pdf" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver certificado de Diplomado Diseño y Gestión Ágil">
-                            <span>Ver Certificado</span>
+                            <span data-i18n="certs.btn_certificate">Ver Certificado</span>
                             <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         </a>
                     </div>
-                    <div id="tooltip-agil" role="tooltip" class="cert-card__tooltip">
+                    <div id="tooltip-agil" role="tooltip" class="cert-card__tooltip" data-i18n="certs.c3_tooltip">
                         Dominio de Scrum, Kanban, gestión de prioridades de producto y articulación estratégica con equipos de ingeniería.
                     </div>
                 </div>
@@ -464,20 +474,20 @@
                         <span class="cert-card__category">Innovación &amp; UX</span>
                         <span class="cert-card__verified" title="Certificado oficial">
                             <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Verificado
+                            <span data-i18n="certs.verified">Verificado</span>
                         </span>
                     </div>
                     <div class="cert-card__body">
-                        <h3 class="cert-card__title">Especialización en Design Thinking</h3>
+                        <h3 class="cert-card__title" data-i18n="certs.c4_title">Especialización en Design Thinking</h3>
                         <p class="cert-card__institution">UPLA · 2023</p>
                     </div>
                     <div class="cert-card__footer">
                         <a href="assets/certificaciones/design-thinking-upla.pdf" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver certificado de Design Thinking UPLA">
-                            <span>Ver Certificado</span>
+                            <span data-i18n="certs.btn_certificate">Ver Certificado</span>
                             <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         </a>
                     </div>
-                    <div id="tooltip-dt" role="tooltip" class="cert-card__tooltip">
+                    <div id="tooltip-dt" role="tooltip" class="cert-card__tooltip" data-i18n="certs.c4_tooltip">
                         Técnicas de descubrimiento de problemas, síntesis de hallazgos, ideación y validación rápida con stakeholders.
                     </div>
                 </div>
@@ -488,20 +498,20 @@
                         <span class="cert-card__category">Desarrollo Frontend</span>
                         <span class="cert-card__verified" title="Certificado oficial">
                             <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Verificado
+                            <span data-i18n="certs.verified">Verificado</span>
                         </span>
                     </div>
                     <div class="cert-card__body">
-                        <h3 class="cert-card__title">Diseño Web Semántico HTML5 + CSS</h3>
+                        <h3 class="cert-card__title" data-i18n="certs.c5_title">Diseño Web Semántico HTML5 + CSS</h3>
                         <p class="cert-card__institution">Acreditación Técnica · 2022</p>
                     </div>
                     <div class="cert-card__footer">
                         <a href="assets/certificaciones/diseno-web-html5css.png" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver certificado de Diseño Web HTML5 y CSS">
-                            <span>Ver Certificado</span>
+                            <span data-i18n="certs.btn_certificate">Ver Certificado</span>
                             <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         </a>
                     </div>
-                    <div id="tooltip-web" role="tooltip" class="cert-card__tooltip">
+                    <div id="tooltip-web" role="tooltip" class="cert-card__tooltip" data-i18n="certs.c5_tooltip">
                         Estándares de accesibilidad WCAG AA/AAA, diseño responsive, CSS Grid, Flexbox y optimización de carga web.
                     </div>
                 </div>
@@ -512,20 +522,20 @@
                         <span class="cert-card__category">Inteligencia Artificial</span>
                         <span class="cert-card__verified" title="Certificado oficial">
                             <svg class="cert-card__verified-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Verificado
+                            <span data-i18n="certs.verified">Verificado</span>
                         </span>
                     </div>
                     <div class="cert-card__body">
-                        <h3 class="cert-card__title">Fundamentos de IA Generativa</h3>
+                        <h3 class="cert-card__title" data-i18n="certs.c6_title">Fundamentos de IA Generativa</h3>
                         <p class="cert-card__institution">Certificación Especializada · 2024</p>
                     </div>
                     <div class="cert-card__footer">
                         <a href="assets/certificaciones/ia-generativa.pdf" target="_blank" rel="noopener" class="cert-card__btn" aria-label="Ver certificado de IA Generativa">
-                            <span>Ver Certificado</span>
+                            <span data-i18n="certs.btn_certificate">Ver Certificado</span>
                             <svg class="cert-card__btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         </a>
                     </div>
-                    <div id="tooltip-ia" role="tooltip" class="cert-card__tooltip">
+                    <div id="tooltip-ia" role="tooltip" class="cert-card__tooltip" data-i18n="certs.c6_tooltip">
                         Estrategias de co-creación con LLMs, diseño de interfaces generativas y consideraciones éticas en UX para IA.
                     </div>
                 </div>
@@ -533,8 +543,8 @@
 
             <!-- ====== CREDENCIALES VERIFICADAS (Credly) ====== -->
             <div class="credly-section reveal">
-                <h3 class="credly-section__title">Credenciales Verificadas</h3>
-                <p class="credly-section__subtitle">Insignias digitales oficiales con verificación criptográfica en tiempo real a través de Credly</p>
+                <h3 class="credly-section__title" data-i18n="credly.title">Credenciales Verificadas</h3>
+                <p class="credly-section__subtitle" data-i18n="credly.subtitle">Insignias digitales oficiales con verificación criptográfica en tiempo real a través de Credly</p>
                 <div class="credly-grid credly-grid--4col">
                     <a class="credly-badge" href="https://www.credly.com/badges/2d0f3101-3be5-4b0d-9fc1-9aa9165612ef/public_url" target="_blank" rel="noopener">
                         <span class="credly-badge__arrow">↗</span>
@@ -592,16 +602,16 @@
                         <span class="credly-badge__issuer">Talento Digital · 2024</span>
                     </a>
                 </div>
-                <a href="https://www.credly.com/users/patricio-bustamante-eguia/badges" target="_blank" rel="noopener" class="credly-section__link">Ver todas las credenciales en Credly ↗</a>
+                <a href="https://www.credly.com/users/patricio-bustamante-eguia/badges" target="_blank" rel="noopener" class="credly-section__link" data-i18n="credly.link">Ver todas las credenciales en Credly ↗</a>
             </div>
         </section>
 
         <!-- ====== TREND HUNTER (Weekly Pulse) ====== -->
         <section class="weekly-pulse reveal" id="trend-hunter" aria-labelledby="weekly-pulse-titulo">
             <div class="section-heading">
-                <span class="section-heading__badge">Actualidad &amp; Tendencias</span>
-                <h2 class="section-heading__title" id="weekly-pulse-titulo">Weekly Pulse</h2>
-                <p class="section-heading__subtitle">Selección automatizada semanal con las innovaciones más relevantes en diseño de interacción e IA.</p>
+                <span class="section-heading__badge" data-i18n="pulse.badge">Actualidad &amp; Tendencias</span>
+                <h2 class="section-heading__title" id="weekly-pulse-titulo" data-i18n="pulse.title">Weekly Pulse</h2>
+                <p class="section-heading__subtitle" data-i18n="pulse.subtitle">Selección automatizada semanal con las innovaciones más relevantes en diseño de interacción e IA.</p>
             </div>
             <div class="projects__grid" id="newsGrid">
                 <article class="news-card">
@@ -614,9 +624,9 @@
                     </div>
                     <div class="news-card__content">
                         <span class="news-card__source">UX Psychology Weekly</span>
-                        <h3 class="news-card__title">Psicología Cognitiva y UX: El poder de los Modelos Mentales</h3>
-                        <p class="news-card__summary">Cómo entender la estructura del pensamiento humano nos permite diseñar interfaces que se sienten naturales e intuitivas.</p>
-                        <a href="https://uxdesign.cc/" target="_blank" rel="noopener noreferrer" class="news-card__btn">Leer Artículo ↗</a>
+                        <h3 class="news-card__title" data-i18n="pulse.a1_title">Psicología Cognitiva y UX: El poder de los Modelos Mentales</h3>
+                        <p class="news-card__summary" data-i18n="pulse.a1_desc">Cómo entender la estructura del pensamiento humano nos permite diseñar interfaces que se sienten naturales e intuitivas.</p>
+                        <a href="https://uxdesign.cc/" target="_blank" rel="noopener noreferrer" class="news-card__btn" data-i18n="pulse.btn">Leer Artículo ↗</a>
                     </div>
                 </article>
 
@@ -630,9 +640,9 @@
                     </div>
                     <div class="news-card__content">
                         <span class="news-card__source">HCI Labs</span>
-                        <h3 class="news-card__title">Carga Cognitiva: El enemigo silencioso de la Usabilidad</h3>
-                        <p class="news-card__summary">Estrategias basadas en la psicología para simplificar la toma de decisiones y mejorar la retención del usuario.</p>
-                        <a href="https://lawsofux.com/hicks-law/" target="_blank" rel="noopener noreferrer" class="news-card__btn">Leer Artículo ↗</a>
+                        <h3 class="news-card__title" data-i18n="pulse.a2_title">Carga Cognitiva: El enemigo silencioso de la Usabilidad</h3>
+                        <p class="news-card__summary" data-i18n="pulse.a2_desc">Estrategias basadas en la psicología para simplificar la toma de decisiones y mejorar la retención del usuario.</p>
+                        <a href="https://lawsofux.com/hicks-law/" target="_blank" rel="noopener noreferrer" class="news-card__btn" data-i18n="pulse.btn">Leer Artículo ↗</a>
                     </div>
                 </article>
 
@@ -646,9 +656,9 @@
                     </div>
                     <div class="news-card__content">
                         <span class="news-card__source">Behavioral UX</span>
-                        <h3 class="news-card__title">Psicología del Usuario: El puente entre mente y tecnología</h3>
-                        <p class="news-card__summary">Análisis de cómo el trasfondo en ciencias del comportamiento transforma radicalmente la arquitectura de información.</p>
-                        <a href="https://www.nngroup.com/articles/" target="_blank" rel="noopener noreferrer" class="news-card__btn">Leer Artículo ↗</a>
+                        <h3 class="news-card__title" data-i18n="pulse.a3_title">Psicología del Usuario: El puente entre mente y tecnología</h3>
+                        <p class="news-card__summary" data-i18n="pulse.a3_desc">Análisis de cómo el trasfondo en ciencias del comportamiento transforma radicalmente la arquitectura de información.</p>
+                        <a href="https://www.nngroup.com/articles/" target="_blank" rel="noopener noreferrer" class="news-card__btn" data-i18n="pulse.btn">Leer Artículo ↗</a>
                     </div>
                 </article>
             </div>
@@ -657,26 +667,26 @@
         <!-- ====== CONTACTO ====== -->
         <section class="contact-section flat-section reveal" id="contacto" aria-labelledby="contacto-titulo">
             <div class="contact-form">
-                <span class="section-badge">Hablemos de tu Proyecto</span>
-                <h2 class="contact-form__title" id="contacto-titulo">Iniciar Conversación</h2>
-                <p class="contact-form__description">¿Buscas potenciar la experiencia de usuario de tu producto o requieres consultoría estratégica? Cuéntame sobre tus objetivos.</p>
+                <span class="section-badge" data-i18n="contact.badge">Hablemos de tu Proyecto</span>
+                <h2 class="contact-form__title" id="contacto-titulo" data-i18n="contact.title">Iniciar Conversación</h2>
+                <p class="contact-form__description" data-i18n="contact.desc">¿Buscas potenciar la experiencia de usuario de tu producto o requieres consultoría estratégica? Cuéntame sobre tus objetivos.</p>
                 <form class="contact-form__form" id="contactForm" novalidate>
                     <div class="contact-form__group">
-                        <label for="name" class="contact-form__label">Nombre completo</label>
-                        <input type="text" id="name" name="name" placeholder="Ej. Camila Morales" required
+                        <label for="name" class="contact-form__label" data-i18n="contact.name_label">Nombre completo</label>
+                        <input type="text" id="name" name="name" placeholder="Ej. Camila Morales" data-i18n-placeholder="contact.name_ph" required
                             class="contact-form__input" autocomplete="name">
                     </div>
                     <div class="contact-form__group">
-                        <label for="email" class="contact-form__label">Correo corporativo / personal</label>
-                        <input type="email" id="email" name="email" placeholder="camila@empresa.com" required
+                        <label for="email" class="contact-form__label" data-i18n="contact.email_label">Correo corporativo / personal</label>
+                        <input type="email" id="email" name="email" placeholder="camila@empresa.com" data-i18n-placeholder="contact.email_ph" required
                             class="contact-form__input" autocomplete="email">
                     </div>
                     <div class="contact-form__group">
-                        <label for="message" class="contact-form__label">Detalles del proyecto o desafío</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Describe brevemente el producto, metas de negocio o fecha estimada..." required
+                        <label for="message" class="contact-form__label" data-i18n="contact.msg_label">Detalles del proyecto o desafío</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Describe brevemente el producto, metas de negocio o fecha estimada..." data-i18n-placeholder="contact.msg_ph" required
                             class="contact-form__textarea"></textarea>
                     </div>
-                    <button type="submit" class="contact-form__btn" id="submitBtn">Enviar Mensaje</button>
+                    <button type="submit" class="contact-form__btn" id="submitBtn" data-i18n="contact.btn">Enviar Mensaje</button>
                     <div class="contact-form__feedback" id="formFeedback" role="status" aria-live="polite"></div>
                 </form>
             </div>
@@ -692,7 +702,7 @@
 
     <!-- ====== FOOTER ====== -->
     <footer class="footer">
-        <p class="footer__text">&copy; 2026 Patricio Bustamante Eguía &mdash; AI Product Designer &amp; UX/UI Specialist.</p>
+        <p class="footer__text" data-i18n="footer.text">&copy; 2026 Patricio Bustamante Eguía &mdash; AI Product Designer &amp; UX/UI Specialist.</p>
     </footer>
 
     <!-- EmailJS SDK -->
